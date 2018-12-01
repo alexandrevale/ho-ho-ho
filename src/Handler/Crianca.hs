@@ -4,12 +4,12 @@
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE QuasiQuotes #-}
-module Handler.Responsavel where
+module Handler.Crianca where
 
 import Import
 
-formResponsavel :: Form Responsavel
-formResponsavel = renderBootstrap $ Responsavel
+formCrianca :: Form Crianca
+formCrianca = renderBootstrap $ Crianca
     <$> areq textField "Nome: " Nothing
     <*> areq textField "E-mail: " Nothing
     <*> areq textField "Senha: " Nothing
@@ -17,33 +17,33 @@ formResponsavel = renderBootstrap $ Responsavel
     <*> areq textField "Telefone: " Nothing
     <*> areq textField "CPF: " Nothing
     
-getResponsavelR :: Handler Html
-getResponsavelR = do 
-    (widgetForm, enctype) <- generateFormPost formResponsavel
+getCriancaR :: Handler Html
+getCriancaR = do 
+    (widgetForm, enctype) <- generateFormPost formCrianca
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
-        $(whamletFile "templates/responsavel.hamlet")
+        $(whamletFile "templates/crianca.hamlet")
 
-postResponsavelR :: Handler Html
-postResponsavelR = do 
-    ((res,_),_) <- runFormPost formResponsavel
+postCriancaR :: Handler Html
+postCriancaR = do 
+    ((res,_),_) <- runFormPost formCrianca
     case res of 
-        FormSuccess responsavel -> do 
-            runDB $ insert responsavel 
-            redirect ResponsavelR
+        FormSuccess crianca -> do 
+            runDB $ insert crianca 
+            redirect CriancaR
         _ -> redirect HomeR
 
-getResponsavelR :: Handler Html
-getResponsavelR = do 
+getCriancaR :: Handler Html
+getCriancaR = do 
     -- select * from responsavel;
-    responsavel <- runDB $ selectList [] [Asc ResponsavelNome]
+    crianca <- runDB $ selectList [] [Asc ResponsavelCrianca]
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
-        $(whamletFile "templates/responsavel.hamlet")
+        $(whamletFile "templates/crianca.hamlet")
 
-getPerfilR :: ResponsavelId -> Handler Html
-getPerfilR responsavelid = do 
-    responsavel <- runDB $ get404 responsavelid
+getPerfilR :: CriancaId -> Handler Html
+getPerfilR criancaid = do 
+    crianca <- runDB $ get404 responsavelid
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
         $(whamletFile "templates/perfil.hamlet")
