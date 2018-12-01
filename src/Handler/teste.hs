@@ -9,3 +9,11 @@
 
 --para ver o conteúdo de cada tabela
 --selec * from nomeTabela
+
+{-
+Documentação 
+
+Yesod.Form.Fields: http://hackage.haskell.org/package/yesod-form-1.6.3/docs/Yesod-Form-Fields.html
+
+
+-}
