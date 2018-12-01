@@ -11,9 +11,9 @@ import Import
 formResponsavel :: Form Responsavel
 formResponsavel = renderBootstrap $ Responsavel
     <$> areq textField "Nome: " Nothing
-    <*> areq textField "E-mail: " Nothing
+    <*> areq emailField  "E-mail: " Nothing
     <*> areq passwordField "Senha: " Nothing
-    <*> areq textField "Confirmação de Senha: " Nothing
+    <*> areq passwordField "Confirmação de Senha: " Nothing
     <*> areq textField "Telefone: " Nothing
     <*> areq textField "CPF: " Nothing
     
@@ -24,7 +24,7 @@ formCrianca = renderBootstrap $ Crianca
     <*> areq textField "Sexo: " Nothing
     <*> areq textField "Tamanho da roupa: " Nothing
     <*> areq intField "Tamanho do calçado: " Nothing
-    <*> areq intField "Preferencia: " Nothing
+    <*> areq textareaField  "Preferencia: " Nothing
     
 getResponsavelR :: Handler Html
 getResponsavelR = do 

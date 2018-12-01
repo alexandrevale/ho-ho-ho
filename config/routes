@@ -4,10 +4,9 @@
 /robots.txt RobotsR GET
 
 /                               HomeR               GET 
-/padrinho                       CadastroPadrinhoR   GET POST
+/padrinho                       PadrinhoR   GET POST
 /crianca                        CriancaR   GET POST
 /responsavel                    ResponsavelR   GET POST
-/familia                        CadastroFamiliaR    GET POST
 
 /login                          LoginR              GET POST
 /logout                         LogoutR             POST

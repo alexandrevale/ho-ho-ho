@@ -11,9 +11,9 @@ import Import
 formPadrinho :: Form Padrinho
 formPadrinho = renderBootstrap $ Padrinho
     <$> areq textField "Nome: " Nothing
-    <*> areq textField "E-mail: " Nothing
-    <*> areq textField "Senha: " Nothing
-    <*> areq textField "Confirmação de Senha: " Nothing
+    <*> areq emailField "E-mail: " Nothing
+    <*> areq passwordField "Senha: " Nothing
+    <*> areq passwordField "Confirmação de Senha: " Nothing
     <*> areq textField "Telefone: " Nothing
     <*> areq textField "CPF: " Nothing
     
