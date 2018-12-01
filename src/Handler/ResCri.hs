@@ -12,7 +12,7 @@ formResponsavel :: Form Responsavel
 formResponsavel = renderBootstrap $ Responsavel
     <$> areq textField "Nome: " Nothing
     <*> areq textField "E-mail: " Nothing
-    <*> areq textField "Senha: " Nothing
+    <*> areq passwordField "Senha: " Nothing
     <*> areq textField "Confirmação de Senha: " Nothing
     <*> areq textField "Telefone: " Nothing
     <*> areq textField "CPF: " Nothing
