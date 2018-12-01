@@ -12,5 +12,3 @@
 /logout                         LogoutR             POST
 
 /admin                          AdminR              GET
-/admin/#SacolinhaId/apagar      ApagarR             POST
-

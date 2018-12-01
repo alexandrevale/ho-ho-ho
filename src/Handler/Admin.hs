@@ -18,7 +18,7 @@ getAdminR = do
         addStylesheet $ StaticR css_bootstrap_css
         $(whamletFile "templates/admin.hamlet")
 
-postApagarR :: UsuarioId -> Handler Html
+{--postApagarR :: UsuarioId -> Handler Html
 postApagarR usrid = do 
     runDB $ delete usrid
-    redirect AdminR
+    redirect AdminR--}
