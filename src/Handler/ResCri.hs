@@ -21,7 +21,7 @@ formCrianca :: Form Crianca
 formCrianca = renderBootstrap $ Crianca
     <$> areq textField "Nome: " Nothing
     <*> areq intField "Idade: " Nothing
-    <*> areq textField "Sexo: " Nothing
+    <*> areq (selectField $ optionsPairs [(Masculino, "Masculino"),(Feminino, "Feminino")]) "Gênero" Nothing
     <*> areq textField "Tamanho da roupa: " Nothing
     <*> areq intField "Tamanho do calçado: " Nothing
     <*> areq textareaField  "Preferencia: " Nothing
