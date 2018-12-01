@@ -3,4 +3,13 @@
 /favicon.ico FaviconR GET
 /robots.txt RobotsR GET
 
-/ HomeR GET 
+/                               HomeR               GET 
+/padrinho                       CadastroPadrinhoR   GET POST
+/familia                        CadastroFamiliaR    GET POST
+
+/login                          LoginR              GET POST
+/logout                         LogoutR             POST
+
+/admin                          AdminR              GET
+/admin/#SacolinhaId/apagar      ApagarR             POST
+
