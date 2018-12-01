@@ -5,6 +5,8 @@
 
 /                               HomeR               GET 
 /padrinho                       CadastroPadrinhoR   GET POST
+/crianca                        CadastroCriancaR   GET POST
+/responsavel                    CadastroResponsavelR   GET POST
 /familia                        CadastroFamiliaR    GET POST
 
 /login                          LoginR              GET POST
