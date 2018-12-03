@@ -4,30 +4,30 @@
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE QuasiQuotes #-}
-module Handler.Login where
+module Handler.LoginAdm where
 
--- import Text.Lucius
--- import Text.Julius
+import Text.Lucius
+import Text.Julius
 import Import
 
-formLogin :: Form (Text,Text)
-formLogin = renderBootstrap $ (,) 
+formLoginadm :: Form (Text,Text)
+formLoginadm = renderBootstrap $ (,) 
     <$> areq emailField "E-mail: " Nothing
     <*> areq passwordField "Senha: " Nothing
 
-getLoginR :: Handler Html
-getLoginR = do 
-    (widgetForm, enctype) <- generateFormPost formLogin
+getLoginadmR :: Handler Html
+getLoginadmR = do 
+    (widgetForm, enctype) <- generateFormPost formLoginadm
     msg <- getMessage
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
         $(whamletFile "templates/login.hamlet")
     
-postLoginR :: Handler Html 
-postLoginR = do 
-    ((res,_),_) <- runFormPost formLogin
+postLoginadmR :: Handler Html 
+postLoginadmR = do 
+    ((res,_),_) <- runFormPost formLoginadm
     case res of
-        FormSuccess ("admin@admin.com","admin1234") -> do 
+        FormSuccess ("admin@admin.com","admin123") -> do 
             setSession "_USR" (pack $ show $ Usuario "admin" "admin@admin.com" "")
             redirect AdminR
         

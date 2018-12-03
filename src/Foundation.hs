@@ -22,13 +22,19 @@ data App = App
 
 mkYesodData "App" $(parseRoutesFile "config/routes")
 
+type Form a = Html -> MForm Handler (FormResult a, Widget)
+
 instance Yesod App where
     makeLogger = return . appLogger
     authRoute _ = Just LoginR
     isAuthorized HomeR _ = return Authorized
     isAuthorized LoginR _ = return Authorized
+    isAuthorized FaviconR _ = return Authorized
+    isAuthorized RobotsR _ = return Authorized
+    isAuthorized LogoutR _ = return Authorized
+    isAuthorized AdminR _ = return Authorized
     isAuthorized (StaticR _) _ = return Authorized
-
+    
     
 instance YesodPersist App where
     type YesodPersistBackend App = SqlBackend
