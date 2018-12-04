@@ -8,6 +8,9 @@ module Handler.Home where
 import Import
 import Network.HTTP.Types.Status
 import Database.Persist.Postgresql
+import Text.Lucius
+import Text.Julius
+import Prelude (read)
 
 getHomeR :: Handler Html
 getHomeR = do 
@@ -30,5 +33,5 @@ getCadastroR = do
         -- |]
         addStylesheet $ StaticR css_bootstrap_css
         $(whamletFile "templates/tipocadastro.hamlet")
-        -- toWidget $(luciusFile "templates/home.lucius")
-        -- toWidgetHead $(juliusFile "templates/home.julius")
+        toWidget $(luciusFile "templates/home.lucius")
+        toWidgetHead $(juliusFile "templates/home.julius")

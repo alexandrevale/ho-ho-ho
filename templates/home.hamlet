@@ -16,11 +16,12 @@
         <a href="#sacolinhas">Sacolinhas
         <a href="">Quem Confia
         <a href="">Contatos
+        <a class="nav-link" href=@{CadastroR}> 
+                    Cadastrar
         <div .menu__login>
           <a href="">Acessar
-          <li class="nav-item">
-                <a class="nav-link" href=@{CadastroR}> 
-                    Cadastrar
+        
+                
 
   <main>
   
