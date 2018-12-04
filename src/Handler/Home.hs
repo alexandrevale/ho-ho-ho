@@ -22,7 +22,7 @@ getHomeR = do
         -- |]
         addStylesheet $ StaticR css_bootstrap_css
         $(whamletFile "templates/home.hamlet")
-        -- toWidget $(luciusFile "templates/home.lucius")
+        toWidget $(luciusFile "templates/home.lucius")
         -- toWidgetHead $(juliusFile "templates/home.julius")
 
 getCadastroR :: Handler Html   

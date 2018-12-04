@@ -1,3 +1,4 @@
+<div>
 <nav>
   <div .nav__header>
     <div .nav__title>
@@ -16,19 +17,35 @@
         <a href="#sacolinhas">Sacolinhas
         <a href="">Quem Confia
         <a href="">Contatos
+        <a class="nav-link" href=@{CadastroR}> 
+                    Cadastrar
         <div .menu__login>
           <a href="">Acessar
-          <li class="nav-item">
-                <a class="nav-link" href=@{CadastroR}> 
-                    Cadastrar
+          
+                
 <div .container>
-     <div .row justify-content-sm-center>
-        <div .col-sm-6 col-md-4>
-           <div .card mb-5>
-              <img .card-img-top src="img/dog4.jpg">
-              <div .card-body>
-                 <h4 .card-title>Dog 1</h4>
-                 <h6 .subtitle mb-2 text-muted>Titulo do dog</h6>
-                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              
-              
+    <div .tipoCadastro>
+
+               <div .cadastros>
+                  <img .card-img-top src="img/dog4.jpg">
+                  <div .card-body>
+                     <h4 .card-title>Dog 1</h4>
+                     <h6 .subtitle mb-2 text-muted>Titulo do dog</h6>
+                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                     <button> Cadastre-se</button>
+                  
+               <div .cadastros>
+                  <img .card-img-top src="img/dog4.jpg">
+                  <div .card-body>
+                     <h4 .card-title>Dog 1</h4>
+                     <h6 .subtitle mb-2 text-muted>Titulo do dog</h6>
+                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                     <button> Cadastre-se</button>
+                     
+               <div .cadastros>
+                  <img .card-img-top src="img/dog4.jpg">
+                  <div .card-body>
+                     <h4 .card-title>Dog 1</h4>
+                     <h6 .subtitle mb-2 text-muted>Titulo do dog</h6>
+                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                     <button> Cadastre-se</button>
