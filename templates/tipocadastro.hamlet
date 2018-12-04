@@ -29,10 +29,10 @@
                <div .cadastros>
                   <img .card-img-top src="img/dog4.jpg">
                   <div .card-body>
-                     <h4 .card-title>Dog 1</h4>
+                     <h4 .card-title>Padrinho</h4>
                      <h6 .subtitle mb-2 text-muted>Titulo do dog</h6>
                      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                     <button> Cadastre-se</button>
+                     <a href=@{PadrinhoR}> Cadastre-se
                   
                <div .cadastros>
                   <img .card-img-top src="img/dog4.jpg">

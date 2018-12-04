@@ -10,3 +10,4 @@
 /tipoCadastro                   CadastroR           GET
 
 /admin                          AdminR              GET
+/padrinho                       PadrinhoR           GET 

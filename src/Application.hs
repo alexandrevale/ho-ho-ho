@@ -40,6 +40,8 @@ import Handler.Common
 import Handler.Home
 import Handler.Login
 import Handler.Admin
+import Handler.Padrinho
+
 -- import Handler.LoginAdm
 
 

@@ -1,0 +1,3 @@
+<form action=@{PadrinhoR} method=post enctype=#{enctype}>
+    ^{widgetForm}
+    <input type="submit" value="Enviar">

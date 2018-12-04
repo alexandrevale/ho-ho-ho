@@ -3,3 +3,10 @@ Usuario
     email Text
     senha Text
     deriving Show Read
+    
+Padrinho
+    nome Text
+    telefone Text
+    cpf Text
+    deriving Show Read
+    
