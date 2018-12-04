@@ -21,3 +21,14 @@ getHomeR = do
         $(whamletFile "templates/home.hamlet")
         -- toWidget $(luciusFile "templates/home.lucius")
         -- toWidgetHead $(juliusFile "templates/home.julius")
+
+getCadastroR :: Handler Html   
+getCadastroR = do 
+    defaultLayout $ do 
+        -- toWidgetHead [hamlet|
+        --     <script src=@{StaticR js_script_js}>
+        -- |]
+        addStylesheet $ StaticR css_bootstrap_css
+        $(whamletFile "templates/tipocadastro.hamlet")
+        -- toWidget $(luciusFile "templates/home.lucius")
+        -- toWidgetHead $(juliusFile "templates/home.julius")
