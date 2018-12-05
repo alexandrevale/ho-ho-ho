@@ -13,7 +13,7 @@
 
       <div .nav__links>
         <a href="">Home
-        <a href="#sacolinhas">Sacolinhas
+        <a class="nav-link" href=@{PerfilR}>Sacolinhas
         <a href="">Quem Confia
         <a href="">Contatos
         <a class="nav-link" href=@{CadastroR}> 
