@@ -21,3 +21,10 @@ getPadrinhoR = do
         addStylesheet $ StaticR css_bootstrap_css
         $(whamletFile "templates/cadastro-padrinho.hamlet")
 
+postPadrinhoR :: Handler Html
+postPadrinhoR = do 
+    ((res,_),_) <- runFormPost formPadrinho
+    case res of 
+        FormSuccess padrinho -> do 
+            runDB $ insert padrinho 
+            redirect HomeR

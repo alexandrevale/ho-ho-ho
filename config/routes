@@ -10,7 +10,7 @@
 /tipoCadastro                   CadastroR           GET
 
 /admin                          AdminR              GET
-/padrinho                       PadrinhoR           GET 
+/padrinho                       PadrinhoR           GET POST
 /empresa                        EmpresaR            GET POST
 
 /perfil                         PerfilR             GET
