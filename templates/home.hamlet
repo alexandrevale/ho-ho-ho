@@ -19,7 +19,7 @@
         <a class="nav-link" href=@{CadastroR}> 
                     Cadastrar
         <div .menu__login>
-          <a href="">Acessar
+          <a href=@{LoginR}>Acessar
 
 <main>
     <section #banner .ancora>
