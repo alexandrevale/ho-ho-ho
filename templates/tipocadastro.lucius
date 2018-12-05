@@ -1,0 +1,33 @@
+.imgTipoCadastro img {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+
+  .cadastros {
+    padding: 15px;
+    background: #c8d6e5;
+    margin: 15px;
+}
+
+.tipoCadastro {
+    display: inline-flex;
+}
+
+.imgTipoCadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-body a {
+    background: #eae7e7;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border: 1px solid lightslategray;
+}
+
+.card-text {
+    margin-bottom: 25px;
+}

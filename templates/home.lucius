@@ -164,15 +164,6 @@ h2 {
   margin-right: 5px;  
 }
 
-  .cadastros {
-    padding: 15px;
-    background: #c8d6e5;
-    margin: 15px;
-}
-
-.tipoCadastro {
-    display: inline-flex;
-}
 
 @media (max-width: 991px) {
   .nav__header {
