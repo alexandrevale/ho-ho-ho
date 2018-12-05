@@ -9,4 +9,10 @@ Padrinho
     telefone Text
     cpf Text
     deriving Show Read
-    
+
+Empresa
+    nome Text
+    endereco Text
+    cnpj Text
+    telefone Text
+    deriving Show Read

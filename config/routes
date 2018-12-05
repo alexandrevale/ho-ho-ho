@@ -11,3 +11,4 @@
 
 /admin                          AdminR              GET
 /padrinho                       PadrinhoR           GET 
+/empresa                        EmpresaR            GET 

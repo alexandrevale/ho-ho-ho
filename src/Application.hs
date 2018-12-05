@@ -41,6 +41,7 @@ import Handler.Home
 import Handler.Login
 import Handler.Admin
 import Handler.Padrinho
+import Handler.Empresa
 
 -- import Handler.LoginAdm
 

@@ -50,4 +50,4 @@
               <h6 .subtitle mb-2 text-muted>Faça a diferença nesse natal
               <p class="card-text">Como empresa você pode adotar quantas crianças quiser.<br>A nossa sugestão é que os funcionários da sua empresa compartilhem dessa ideia, dessa forma mais crianças poderão receber suas sacolinhas de natal.
               <div .botaoTipoCadastro>
-                <a href=@{PadrinhoR}> Cadastre-se
+                <a href=@{EmpresaR}> Cadastre-se
