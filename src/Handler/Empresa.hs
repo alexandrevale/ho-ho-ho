@@ -26,3 +26,10 @@ getEmpresaR = do
         toWidget $(luciusFile "templates/cadastro-empresa.lucius")
         $(whamletFile "templates/cadastro-empresa.hamlet")
 
+postEmpresaR :: Handler Html
+postEmpresaR = do 
+    ((res,_),_) <- runFormPost formEmpresa
+    case res of 
+        FormSuccess empresa -> do 
+            runDB $ insert empresa 
+            redirect HomeR

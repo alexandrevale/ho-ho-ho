@@ -12,7 +12,8 @@ form {
 
 .control-group.clearfix.required input {
     height: 50px;
-    width: 100%;
+    width: 100%;    
+    margin-bottom: 15px;
 }
 
 .tituloEmpresa {
