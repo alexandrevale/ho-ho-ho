@@ -4,14 +4,16 @@
     margin: 20px;
 }
 
-  .cadastros {
+.cadastros {
     padding: 15px;
     background: #c8d6e5;
     margin: 15px;
+    width: 350px;
 }
 
 .tipoCadastro {
-    display: inline-flex;
+    display: flex;
+    width: 100%;
 }
 
 .imgTipoCadastro {
@@ -24,10 +26,17 @@
     background: #eae7e7;
     padding: 15px;
     border-radius: 5px;
-    margin-top: 20px;
     border: 1px solid lightslategray;
 }
 
 .card-text {
     margin-bottom: 25px;
+    min-height: 160px;
+}
+
+.botaoTipoCadastro {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }

@@ -26,25 +26,28 @@
           <div .imgTipoCadastro>
             <img src=@{StaticR imgs_icones_madrinha_png}>
           <div .card-body>
-            <h4 .card-title>Padrinhos</h4>
-              <h6 .subtitle mb-2 text-muted>Titulo do dog
-              <p class="card-text">Seu cadastro de padrinho permite adotar uma criança, depois de adotada nossa equipe entrará em contato para confimar a adoção.<br>>Como padrinho você doa: 1 brinquedo, 1 conjunto de roupa (ex. Blusa e saia, camiseta e bermuda, etc) e um calçado.
-              <a href=@{PadrinhoR}> Cadastre-se
+            <h4 .card-title>Padrinhos
+              <h6 .subtitle mb-2 text-muted>Compartilhe alegria nesse natal
+              <p class="card-text">Seu cadastro de padrinho permite adotar uma criança, depois de adotada nossa equipe entrará em contato para confimar a adoção.<br>Como padrinho você doa: 1 brinquedo, 1 conjunto de roupa (ex. Blusa e saia, camiseta e bermuda, etc) e um calçado.
+              <div .botaoTipoCadastro>
+                <a href=@{PadrinhoR}> Cadastre-se
               
       <div .cadastros>
           <div .imgTipoCadastro>
             <img src=@{StaticR imgs_icones_responsavel_png}>
           <div .card-body>
-            <h4 .card-title>Responsável/h4>
-              <h6 .subtitle mb-2 text-muted>Titulo do dog
+            <h4 .card-title>Responsável
+              <h6 .subtitle mb-2 text-muted>Receba presentes com amor e carinho
               <p class="card-text">Enquanto responsável você faz um breve cadastro com seus dados e depois o cadastro do seu filho.<br>As empresas e os padrinhos cadastrados poderão ter a chance de presentear seu filho com uma sacolinha de natal cheia de amor e carinho.
-              <a href=@{PadrinhoR}> Cadastre-se
+              <div .botaoTipoCadastro>  
+                <a href=@{PadrinhoR}> Cadastre-se
               
       <div .cadastros>
           <div .imgTipoCadastro>
             <img src=@{StaticR imgs_icones_empresa_png}>
           <div .card-body>
-            <h4 .card-title>Empresa</h4>
-              <h6 .subtitle mb-2 text-muted>Titulo do dog
+            <h4 .card-title>Empresa
+              <h6 .subtitle mb-2 text-muted>Faça a diferença nesse natal
               <p class="card-text">Como empresa você pode adotar quantas crianças quiser.<br>A nossa sugestão é que os funcionários da sua empresa compartilhem dessa ideia, dessa forma mais crianças poderão receber suas sacolinhas de natal.
-              <a href=@{PadrinhoR}> Cadastre-se
+              <div .botaoTipoCadastro>
+                <a href=@{PadrinhoR}> Cadastre-se
