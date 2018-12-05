@@ -7,6 +7,8 @@
 module Handler.Padrinho where
 
 import Import
+import Text.Lucius
+import Text.Julius
 
 formPadrinho :: Form Padrinho
 formPadrinho = renderBootstrap $ Padrinho
@@ -19,6 +21,8 @@ getPadrinhoR = do
     (widgetForm, enctype) <- generateFormPost formPadrinho
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
+        toWidget $(luciusFile "templates/home.lucius")
+        toWidget $(luciusFile "templates/cadastro-padrinho.lucius")
         $(whamletFile "templates/cadastro-padrinho.hamlet")
 
 postPadrinhoR :: Handler Html
