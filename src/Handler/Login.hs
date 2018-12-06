@@ -29,7 +29,7 @@ postLoginR = do
     ((res,_),_) <- runFormPost formLogin
     case res of
         FormSuccess ("admin@admin.com","admin1234") -> do 
-            setSession "_USR" (pack $ show $ Usuario "admin" "admin@admin.com" "")
+            setSession "_USR" (pack $ show $ Usuario "admin" "admin@admin.com" "" (PadrinhoPerfil 0) )
             redirect AdminR
         
         FormSuccess (email,senha) -> do

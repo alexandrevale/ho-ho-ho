@@ -2,6 +2,7 @@ Usuario
     nome Text
     email Text
     senha Text
+    perfil Perfil
     deriving Show Read
     
 TipoCadastro
