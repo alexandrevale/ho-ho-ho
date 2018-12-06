@@ -4,7 +4,7 @@
 /robots.txt RobotsR GET
 
 /                               HomeR               GET 
-
+/usuario                        UsuarioR            GET POST
 /login                          LoginR              GET POST
 /logout                         LogoutR             POST
 /tipoCadastro                   CadastroR           GET

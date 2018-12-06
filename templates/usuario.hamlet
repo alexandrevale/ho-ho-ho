@@ -1,0 +1,3 @@
+<form action=@{UsuarioR} method=post enctype=#{enctype}>
+    ^{widgetUsu}
+    <input type="submit" value="Cadastrar" .btn-primary>
