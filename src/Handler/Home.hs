@@ -9,7 +9,7 @@ import Import
 import Network.HTTP.Types.Status
 import Database.Persist.Postgresql
 import Text.Lucius
-import Text.Julius
+-- import Text.Julius
 -- import Settings.StaticFiles
 -- import Prelude (read)
 
@@ -42,7 +42,7 @@ getCadastroR = do
         $(whamletFile "templates/tipocadastro.hamlet")
         toWidget $(luciusFile "templates/tipocadastro.lucius")
         toWidget $(luciusFile "templates/home.lucius")
-        toWidgetHead $(juliusFile "templates/home.julius")
+        -- toWidgetHead $(juliusFile "templates/home.julius")
 
 getPerfilR :: Handler Html   
 getPerfilR = do 
@@ -53,4 +53,4 @@ getPerfilR = do
         addStylesheet $ StaticR css_bootstrap_css
         $(whamletFile "templates/perfil.hamlet")
         toWidget $(luciusFile "templates/home.lucius")
-        toWidgetHead $(juliusFile "templates/home.julius")
+        -- toWidgetHead $(juliusFile "templates/home.julius")

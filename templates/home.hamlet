@@ -65,10 +65,17 @@
             <div .col-lg-12 .col-md-12 .col-sm-12 .col-xs-12>
               <div #owl__quem-confia .owl-carousel .owl-theme>
                 <div .item>
-                  <img src=https://www.visaooeste.com.br/wp-content/uploads/2018/01/66862-FATEC-Itaquera-%E2%80%93-Zona-Leste-SP-5.jpg"" alt="">
+                  <img src=@{StaticR imgs_logos_fatec_PNG} alt="">
                 
                 <div .item>
-                  <img src=https://www.visaooeste.com.br/wp-content/uploads/2018/01/66862-FATEC-Itaquera-%E2%80%93-Zona-Leste-SP-5.jpg"" alt="">
+                  <img src=@{StaticR imgs_logos_html5_png} alt="">
                 
                 <div .item>
-                  <img src=https://www.visaooeste.com.br/wp-content/uploads/2018/01/66862-FATEC-Itaquera-%E2%80%93-Zona-Leste-SP-5.jpg"" alt="">
+                  <img src=@{StaticR imgs_logos_css3_png} alt="">
+                  
+                <div .item>
+                  <img src=@{StaticR imgs_logos_bootstrap_png} alt="">
+                  
+                <div .item>
+                  <img src=@{StaticR imgs_logos_haskell_png} alt="">  
+                
