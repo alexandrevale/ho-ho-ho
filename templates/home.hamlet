@@ -24,7 +24,7 @@
     <section #banner .ancora>
         <div .container>
             <div .row>
-                <div .col-lg-5 .col-md5 .col-sm-5 .col-xs-12 .banner__content">
+                <div .col-lg-5 .col-md-5 .col-sm-5 .col-xs-12 .banner__content>
                     <h2>Faça o natal de uma criança mais feliz
                     <p>Colabore com a campanha e adote uma sacolinha para presentear uma criança
                     <a href=@{UsuarioR} class="btn">Começar

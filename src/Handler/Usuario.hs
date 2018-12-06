@@ -22,12 +22,13 @@ formUsuario = renderBootstrap $  pure (,)
 
 getUsuarioR :: Handler Html
 getUsuarioR = do 
-    setTitle "Cadastro Base - Ho Ho Ho"
+    -- setTitle "Cadastro Base - Ho Ho Ho"
     (widgetUsu, enctype) <- generateFormPost formUsuario
     msg <- getMessage --mensagem que avisa se o usuarioc cadastrou certo
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
         $(whamletFile "templates/usuario.hamlet")
+        toWidget $(luciusFile "templates/usuario.lucius")
 
 postUsuarioR :: Handler Html
 postUsuarioR = do 

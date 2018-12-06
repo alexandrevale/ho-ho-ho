@@ -17,7 +17,7 @@ formLogin = renderBootstrap $ (,)
 
 getLoginR :: Handler Html
 getLoginR = do 
-    setTitle "Login - Ho Ho Ho"
+    -- setTitle "Login - Ho Ho Ho"
     (widgetForm, enctype) <- generateFormPost formLogin
     msg <- getMessage
     defaultLayout $ do 

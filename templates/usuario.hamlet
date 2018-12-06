@@ -1,3 +1,32 @@
-<form action=@{UsuarioR} method=post enctype=#{enctype}>
-    ^{widgetUsu}
-    <input type="submit" value="Cadastrar" .btn-primary>
+<nav>
+  <div .nav__header>
+    <div .nav__title>
+      <h1>Ho Ho Ho</h1>
+
+    <div .nav__menu>
+      <div .nav__btn>
+        <button #nav__btn--check>
+          <span>
+          <span>
+          <span>
+
+
+      <div .nav__links>
+        <a href="">Home
+        <a class="nav-link" href=@{PerfilR}>Sacolinhas
+        <a href="">Quem Confia
+        <a href="">Contatos
+        <div .menu__login>
+          <a class="nav-link" href=@{CadastroR}>Cadastrar
+          <a href=@{LoginR}>Acessar
+
+<main>
+    <div .container>
+        <div .row>
+            <div .col-lg-6 .col-md-6 .col-sm-6 .col-xs-12>    
+                <h2>Cadastro Inicial
+             
+            <div .col-lg-6 .col-md-6 .col-sm-6 .col-xs-12>  
+                <form action=@{UsuarioR} method=post enctype=#{enctype}>
+                    ^{widgetUsu}
+                    <input type="submit" value="Cadastrar" .btn-primary>
