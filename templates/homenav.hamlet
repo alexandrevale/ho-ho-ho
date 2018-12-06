@@ -15,15 +15,15 @@
       $maybe usuario <- logado 
           #{usuarioNome $ read $ unpack usuario}
           <div .nav__links>
-            <a href="">Meu perfil
-            <a class="nav-link" href=@{PerfilR}> Montar Sacolinhas
-            <a href="">Quem Confia
+            <a href=@{PerfilR}>Meu perfil
+            <a class="nav-link" href=@{ListarR}> Montar Sacolinhas
+            <a href="">Meus Dados
               <div .menu__login>
                 <form action=@{LogoutR} method=post>
                   <input type="submit" value="Sair">
       $nothing
           <div .nav__links>
-            <a href="">Home
+            <a href=@{HomeR}>Home
             <a class="nav-link" href=@{PerfilR}>Sacolinhas
             <a href="">Quem Confia
             <a href="">Contatos
