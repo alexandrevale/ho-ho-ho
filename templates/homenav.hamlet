@@ -1,0 +1,27 @@
+<nav>
+  <div .nav__header>
+    <div .nav__title>
+      <h1>Ho Ho Ho</h1>
+
+    <div .nav__menu>
+      <div .nav__btn>
+        <button #nav__btn--check>
+          <span>
+          <span>
+          <span>
+
+      <div .nav__links>
+        <a href="">Home
+        <a class="nav-link" href=@{PerfilR}>Sacolinhas
+        <a href="">Quem Confia
+        <a href="">Contatos
+    
+      $maybe usuario <- logado 
+          #{usuarioNome $ read $ unpack usuario}
+          <div .menu__login>
+            <form action=@{LogoutR} method=post>
+              <input type="submit" value="Logout">
+      $nothing
+        <div .menu__login>
+          <a class="nav-link" href=@{CadastroR}>Cadastrar
+          <a href=@{LoginR}>Acessar

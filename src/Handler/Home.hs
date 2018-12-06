@@ -11,7 +11,10 @@ import Database.Persist.Postgresql
 import Text.Lucius
 -- import Text.Julius
 -- import Settings.StaticFiles
--- import Prelude (read)
+import Prelude (read)
+
+widgetNav :: Maybe Text -> Widget
+widgetNav logado = $(whamletFile "templates/homenav.hamlet")
 
 getHomeR :: Handler Html
 getHomeR = do 

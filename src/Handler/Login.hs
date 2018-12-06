@@ -42,7 +42,7 @@ postLoginR = do
                         <h1>
                             Usuario logado
                     |]
-                    redirect HomeR
+                    redirect PerfilR
                 Nothing -> do 
                     setMessage [shamlet|
                         <h1>

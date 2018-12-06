@@ -4,6 +4,9 @@ Usuario
     senha Text
     deriving Show Read
     
+TipoCadastro
+    nome Text
+    
 Padrinho
     nome Text
     telefone Text

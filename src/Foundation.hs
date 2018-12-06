@@ -41,6 +41,7 @@ instance Yesod App where
     isAuthorized (StaticR _) _ = return Authorized
     
     
+    
 instance YesodPersist App where
     type YesodPersistBackend App = SqlBackend
     runDB action = do
