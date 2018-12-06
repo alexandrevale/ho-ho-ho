@@ -11,6 +11,6 @@
 
 /admin                          AdminR              GET
 /padrinho                       PadrinhoR           GET POST
-/empresa                        EmpresaR            GET POST
+/empresa/#EmpresaId             EmpresaR            GET POST
 
 /perfil                         PerfilR             GET

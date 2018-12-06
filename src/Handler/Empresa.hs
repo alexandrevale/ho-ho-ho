@@ -12,13 +12,12 @@ import Text.Julius
 
 formEmpresa :: Form Empresa
 formEmpresa = renderBootstrap $ Empresa
-    <$> areq textField "Nome: " Nothing
-    <*> areq textField "Telefone: " Nothing
+    <$> areq textField "Telefone: " Nothing
     <*> areq textField "Endereço: " Nothing
     <*> areq textField "CNPJ: " Nothing
     
-getEmpresaR :: Handler Html
-getEmpresaR = do 
+getEmpresaR :: EmpresaId -> Handler Html 
+getEmpresaR empresaId = do 
     -- setTitle "Cadastro de Empresa - Ho Ho Ho"
     (widgetForm, enctype) <- generateFormPost formEmpresa
     defaultLayout $ do 
@@ -27,8 +26,8 @@ getEmpresaR = do
         toWidget $(luciusFile "templates/cadastro-empresa.lucius")
         $(whamletFile "templates/cadastro-empresa.hamlet")
 
-postEmpresaR :: Handler Html
-postEmpresaR = do 
+postEmpresaR :: EmpresaId -> Handler Html
+postEmpresaR empresaId = do 
     ((res,_),_) <- runFormPost formEmpresa
     case res of 
         FormSuccess empresa -> do 

@@ -42,8 +42,8 @@ getCadastroR = do
         --     <script src=@{StaticR js_script_js}>
         -- |]
         addStylesheet $ StaticR css_bootstrap_css
-        $(whamletFile "templates/tipocadastro.hamlet")
-        toWidget $(luciusFile "templates/tipocadastro.lucius")
+        -- $(whamletFile "templates/tipocadastro.hamlet")
+        -- toWidget $(luciusFile "templates/tipocadastro.lucius")
         toWidget $(luciusFile "templates/home.lucius")
         -- toWidgetHead $(juliusFile "templates/home.julius")
 

@@ -12,8 +12,7 @@ import Text.Julius
 
 formPadrinho :: Form Padrinho
 formPadrinho = renderBootstrap $ Padrinho
-    <$> areq textField "Nome: " Nothing
-    <*> areq textField "Telefone: " Nothing
+    <$> areq textField "Telefone: " Nothing
     <*> areq textField "CPF: " Nothing
     
 getPadrinhoR :: Handler Html

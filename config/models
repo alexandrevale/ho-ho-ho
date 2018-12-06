@@ -9,13 +9,11 @@ TipoCadastro
     nome Text
     
 Padrinho
-    nome Text
     telefone Text
     cpf Text
     deriving Show Read
 
 Empresa
-    nome Text
     endereco Text
     cnpj Text
     telefone Text
