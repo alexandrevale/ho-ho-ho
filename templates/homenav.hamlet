@@ -10,18 +10,23 @@
           <span>
           <span>
 
-      <div .nav__links>
-        <a href="">Home
-        <a class="nav-link" href=@{PerfilR}>Sacolinhas
-        <a href="">Quem Confia
-        <a href="">Contatos
+      
     
       $maybe usuario <- logado 
           #{usuarioNome $ read $ unpack usuario}
-          <div .menu__login>
-            <form action=@{LogoutR} method=post>
-              <input type="submit" value="Logout">
+          <div .nav__links>
+            <a href="">Meu perfil
+            <a class="nav-link" href=@{PerfilR}> Montar Sacolinhas
+            <a href="">Quem Confia
+              <div .menu__login>
+                <form action=@{LogoutR} method=post>
+                  <input type="submit" value="Sair">
       $nothing
-        <div .menu__login>
-          <a class="nav-link" href=@{CadastroR}>Cadastrar
-          <a href=@{LoginR}>Acessar
+          <div .nav__links>
+            <a href="">Home
+            <a class="nav-link" href=@{PerfilR}>Sacolinhas
+            <a href="">Quem Confia
+            <a href="">Contatos
+              <div .menu__login>
+                <a class="nav-link" href=@{CadastroR}>Cadastrar
+                <a href=@{LoginR}>Acessar

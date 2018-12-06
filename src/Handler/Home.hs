@@ -47,13 +47,3 @@ getCadastroR = do
         toWidget $(luciusFile "templates/home.lucius")
         -- toWidgetHead $(juliusFile "templates/home.julius")
 
-getPerfilR :: Handler Html   
-getPerfilR = do 
-    defaultLayout $ do 
-        -- toWidgetHead [hamlet|
-        --     <script src=@{StaticR js_script_js}>
-        -- |]
-        addStylesheet $ StaticR css_bootstrap_css
-        $(whamletFile "templates/perfil.hamlet")
-        toWidget $(luciusFile "templates/home.lucius")
-        -- toWidgetHead $(juliusFile "templates/home.julius")

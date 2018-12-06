@@ -1,5 +1,5 @@
 
-    ^{widgetNav logado}
+^{widgetNav logado}
 <main>
     <section #banner .ancora>
         <div .container>

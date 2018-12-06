@@ -39,8 +39,6 @@ postLoginR = do
                 Just (Entity usrid usuario) -> do 
                     setSession "_USR" (pack $ show usuario)
                     setMessage [shamlet|
-                        <h1>
-                            Usuario logado
                     |]
                     redirect PerfilR
                 Nothing -> do 
