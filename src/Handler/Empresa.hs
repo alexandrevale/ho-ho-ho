@@ -19,6 +19,7 @@ formEmpresa = renderBootstrap $ Empresa
     
 getEmpresaR :: Handler Html
 getEmpresaR = do 
+    setTitle "Cadastro de Empresa - Ho Ho Ho"
     (widgetForm, enctype) <- generateFormPost formEmpresa
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css

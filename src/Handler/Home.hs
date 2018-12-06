@@ -18,7 +18,7 @@ getHomeR = do
     -- msg <- getMessage
     logado <- lookupSession "_USR"
     defaultLayout $ do 
-        setTitle "Ho Ho Ho - Home"
+        setTitle "Home - Ho Ho Ho"
         addScriptRemote "https://code.jquery.com/jquery-3.3.1.js"
         addScriptRemote "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"
         addStylesheetRemote "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"

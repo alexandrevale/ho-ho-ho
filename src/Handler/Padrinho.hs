@@ -18,6 +18,7 @@ formPadrinho = renderBootstrap $ Padrinho
     
 getPadrinhoR :: Handler Html
 getPadrinhoR = do 
+    setTitle "Cadastro de Padrinho - Ho Ho Ho"
     (widgetForm, enctype) <- generateFormPost formPadrinho
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
