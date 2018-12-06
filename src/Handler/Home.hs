@@ -4,27 +4,33 @@
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE TypeFamilies #-}
 module Handler.Home where
-
+import           Yesod
 import Import
 import Network.HTTP.Types.Status
 import Database.Persist.Postgresql
 import Text.Lucius
 import Text.Julius
-import Settings.StaticFiles
-import Prelude (read)
+-- import Settings.StaticFiles
+-- import Prelude (read)
 
 getHomeR :: Handler Html
 getHomeR = do 
-    msg <- getMessage
+    -- msg <- getMessage
     logado <- lookupSession "_USR"
     defaultLayout $ do 
-        -- toWidgetHead [hamlet|
-        --     <script src=@{StaticR js_script_js}>
-        -- |]
+        setTitle "Ho Ho Ho - Home"
+        addScriptRemote "https://code.jquery.com/jquery-3.3.1.js"
+        addScriptRemote "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"
+        addStylesheetRemote "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+        addStylesheetRemote "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
         addStylesheet $ StaticR css_bootstrap_css
         $(whamletFile "templates/home.hamlet")
         toWidget $(luciusFile "templates/home.lucius")
-        -- toWidgetHead $(juliusFile "templates/home.julius")
+        -- toWidgetBody $(juliusFile "templates/home.julius")
+        addScript $ StaticR js_script_js
+        
+        
+
 
 getCadastroR :: Handler Html   
 getCadastroR = do 
