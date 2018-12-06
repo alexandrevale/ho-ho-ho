@@ -9,6 +9,7 @@ module Handler.Empresa where
 import Import
 import Text.Lucius
 import Text.Julius
+import Database.Persist.Sql
 
 formEmpresa :: Form Empresa
 formEmpresa = renderBootstrap $ Empresa
@@ -16,8 +17,8 @@ formEmpresa = renderBootstrap $ Empresa
     <*> areq textField "Endereço: " Nothing
     <*> areq textField "CNPJ: " Nothing
     
-getEmpresaR :: EmpresaId -> Handler Html 
-getEmpresaR empresaId = do 
+getEmpresaR :: UsuarioId -> Handler Html 
+getEmpresaR usuarioId = do 
     -- setTitle "Cadastro de Empresa - Ho Ho Ho"
     (widgetForm, enctype) <- generateFormPost formEmpresa
     defaultLayout $ do 
@@ -26,10 +27,13 @@ getEmpresaR empresaId = do
         toWidget $(luciusFile "templates/cadastro-empresa.lucius")
         $(whamletFile "templates/cadastro-empresa.hamlet")
 
-postEmpresaR :: EmpresaId -> Handler Html
-postEmpresaR empresaId = do 
+postEmpresaR :: UsuarioId -> Handler Html
+postEmpresaR usuarioId = do 
     ((res,_),_) <- runFormPost formEmpresa
     case res of 
         FormSuccess empresa -> do 
-            runDB $ insert empresa 
+            runDB $ do
+                eid <- insert empresa
+                update usuarioId [UsuarioPerfil =. EmpresaPerfil (fromSqlKey eid) ]
             redirect HomeR
+            

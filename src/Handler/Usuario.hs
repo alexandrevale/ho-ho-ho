@@ -41,12 +41,12 @@ postUsuarioR = do
     case res of
         FormSuccess (usr, passwordC) -> do 
             if (usuarioSenha usr) == passwordC then do
-                runDB $ insert usr
+                uid <- runDB $ insert usr
                 redirect $ case usuarioPerfil usr of
                     -- PadrinhoPerfil      x -> PadrinhoR $ toSqlKey x
-                    PadrinhoPerfil      x -> undefined
-                    ResponsavelPerfil   x -> undefined
-                    EmpresaPerfil       x -> EmpresaR  $ toSqlKey x
+                    PadrinhoPerfil      _ -> undefined
+                    ResponsavelPerfil   _ -> undefined
+                    EmpresaPerfil       _ -> EmpresaR uid
             else do 
                 setMessage [shamlet|
                     <div .alert .alert-danger>
