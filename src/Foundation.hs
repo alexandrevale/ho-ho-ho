@@ -38,6 +38,7 @@ instance Yesod App where
     isAuthorized PadrinhoR _ = return Authorized
     isAuthorized (EmpresaR _) _ = return Authorized
     isAuthorized PerfilR _ = return Authorized
+    isAuthorized (EmpresaUpdateR _) _ = return Authorized
     isAuthorized (StaticR _) _ = return Authorized
     
     

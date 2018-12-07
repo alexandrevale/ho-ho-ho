@@ -7,10 +7,12 @@
 /usuario                        UsuarioR            GET POST
 /login                          LoginR              GET POST
 /logout                         LogoutR             POST
+
 /tipoCadastro                   CadastroR           GET
+/perfil                         PerfilR             GET
 
 /admin                          AdminR              GET
 /padrinho                       PadrinhoR           GET POST
 /empresa/#UsuarioId             EmpresaR            GET POST
 
-/perfil                         PerfilR             GET
+/empresa/update/#EmpresaId      EmpresaUpdateR      GET POST

@@ -185,7 +185,7 @@ h2 {
 }
 
 .left {
-  background: url(static/imgs/icones/left.png) no-repeat;
+  background: url(@{StaticR imgs_icones_left_png});
 	background-size: cover;
 	width: 63px;
 	height: 71px;

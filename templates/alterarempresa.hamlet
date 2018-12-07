@@ -1,0 +1,10 @@
+<div .container>
+    <div .tituloEmpresa>
+        <h3>Altear Dados de Empresa
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    
+    <div .containerForm>
+        <form action=@{EmpresaUpdateR empresaId} method=post enctype=#{enctype}>
+            ^{widgetForm}
+            <div .enviarCadastro>
+             <input type="submit" value="Salvar">
