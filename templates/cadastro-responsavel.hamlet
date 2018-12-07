@@ -1,0 +1,11 @@
+<main>
+    <div .container>
+        <div .tituloPadrinho>
+            <h3>Cadastro de Responsavel
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        
+        <div .containerForm>
+            <form action=@{PadrinhoR} method=post enctype=#{enctype}>
+                ^{widgetForm}
+                <div .enviarCadastro>
+                 <input type="submit" value="Enviar">

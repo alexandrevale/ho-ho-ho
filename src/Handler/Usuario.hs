@@ -45,7 +45,7 @@ postUsuarioR = do
                 redirect $ case usuarioPerfil usr of
                     -- PadrinhoPerfil      x -> PadrinhoR $ toSqlKey x
                     PadrinhoPerfil      _ -> undefined
-                    ResponsavelPerfil   _ -> undefined
+                    ResponsavelPerfil   _ -> ResponsavelR uid
                     EmpresaPerfil       _ -> EmpresaR uid
             else do 
                 setMessage [shamlet|

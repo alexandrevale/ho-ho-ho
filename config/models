@@ -18,3 +18,8 @@ Empresa
     cnpj Text
     telefone Text
     deriving Show Read
+
+Responsavel
+    telefone Text
+    cpf Text
+    deriving Show Read

@@ -43,6 +43,7 @@ import Handler.Login
 import Handler.Admin
 import Handler.Padrinho
 import Handler.Empresa
+import Handler.Responsavel
 import Handler.Perfil
 
 -- import Handler.LoginAdm
