@@ -17,13 +17,14 @@ formUsuario = renderBootstrap $  pure (,)
             <$> areq textField "Nome: " Nothing
             <*> areq emailField "E-mail: " Nothing 
             <*> areq passwordField "Senha: " Nothing
+            
             <*> areq ( selectField (optionsPairs ([( "Padrinho" , PadrinhoPerfil 0 ) , 
-                                                  ( "Responsavel", ResponsavelPerfil 0 ) , 
+                                                  ( "Responsavel", ResponsavelPerfil 0) , 
                                                   ( "Empresa", EmpresaPerfil 0)] :: [( Text, Perfil )] ) ) ) 
                                                   "Perfil: " Nothing 
             
     )
-    <*> areq passwordField "Confirme sua senha: " Nothing
+            <*> areq passwordField "Confirme sua senha: " Nothing
 
 getUsuarioR :: Handler Html
 getUsuarioR = do 
