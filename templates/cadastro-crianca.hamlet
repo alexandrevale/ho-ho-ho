@@ -1,0 +1,32 @@
+<nav>
+  <div .nav__header>
+    <div .nav__title>
+      <h1>Ho Ho Ho</h1>
+
+    <div .nav__menu>
+      <div .nav__btn>
+        <button #nav__btn--check>
+          <span>
+          <span>
+          <span>
+
+
+      <div .nav__links>
+        <a href="">Home
+        <a class="nav-link" href=@{PerfilR}>Sacolinhas
+        <a href="">Quem Confia
+        <a href="">Contatos
+        <div .menu__login>
+          <a class="nav-link" href=@{CadastroR}>Cadastrar
+          <a href=@{LoginR}>Acessar
+<main>
+    <div .container>
+        <div .tituloPadrinho>
+            <h3>Cadastro de Crianca
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        
+        <div .containerForm>
+            <form action=@{CriancaR} method=post enctype=#{enctype}>
+                ^{widgetForm}
+                <div .enviarCadastro>
+                 <input type="submit" value="Enviar">

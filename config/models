@@ -23,3 +23,13 @@ Responsavel
     telefone Text
     cpf Text
     deriving Show Read
+    
+Crianca
+    nome Text
+    idade Text
+    sexo Text
+    rg Text
+    tamanhoroupa Text
+    tamanhocalcado Text
+    preferencia Text
+    deriving Show Read

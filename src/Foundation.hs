@@ -12,6 +12,7 @@ import Database.Persist.Sql (ConnectionPool, runSqlPool)
 import Yesod.Core.Types     (Logger)
 import Prelude (read)
 
+
 data App = App
     { appSettings    :: AppSettings
     , appStatic      :: Static 
@@ -38,6 +39,7 @@ instance Yesod App where
     isAuthorized PadrinhoR _ = return Authorized
     isAuthorized (EmpresaR _) _ = return Authorized
     isAuthorized (ResponsavelR _) _ = return Authorized
+    isAuthorized CriancaR _ = return Authorized
     isAuthorized PerfilR _ = return Authorized
     isAuthorized (EmpresaUpdateR _) _ = return Authorized
     isAuthorized (StaticR _) _ = return Authorized

@@ -45,6 +45,7 @@ import Handler.Padrinho
 import Handler.Empresa
 import Handler.Responsavel
 import Handler.Perfil
+import Handler.Crianca
 
 -- import Handler.LoginAdm
 

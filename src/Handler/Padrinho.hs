@@ -9,6 +9,7 @@ module Handler.Padrinho where
 import Import
 import Text.Lucius
 import Text.Julius
+import Database.Persist.Sql
 
 formPadrinho :: Form Padrinho
 formPadrinho = renderBootstrap $ Padrinho

@@ -1,0 +1,44 @@
+form {
+    width: 50%;
+}
+
+.containerForm {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.control-group.clearfix.required input {
+    height: 50px;
+    width: 100%;    
+    margin-bottom: 15px;
+}
+
+.tituloEmpresa {
+    text-align: center;
+    margin: 30px 0;
+}
+
+input[type="submit"] {
+    background: #eae7e7;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid lightslategray;
+    color: #18bc9c;
+    width: 115px;
+}
+
+.containerForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.enviarCadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}
