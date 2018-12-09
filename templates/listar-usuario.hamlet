@@ -1,0 +1,15 @@
+<table class="table-stripped">
+    <thead>
+        <tr>
+            <th>
+                NOME
+            <th>
+                E-MAIL
+
+    <tbody>
+        $forall (Entity usuarioid usuario) <- usuario
+            <tr>
+                <td>
+                    #{usuarioNome usuario}
+                <td>
+                    #{usuarioEmail usuario}

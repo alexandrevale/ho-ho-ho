@@ -5,6 +5,8 @@
 
 /                               HomeR               GET 
 /usuario                        UsuarioR            GET POST
+/listar-usuario                 ListarUsuarioR      GET
+
 /login                          LoginR              GET POST
 /logout                         LogoutR             POST
 
