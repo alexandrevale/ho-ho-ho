@@ -29,3 +29,11 @@ getCriancaR = do
         toWidget $(luciusFile "templates/usuario.lucius")
         toWidget $(luciusFile "templates/cadastro-empresa.lucius")
         $(whamletFile "templates/cadastro-crianca.hamlet")
+
+postCriancaR :: Handler Html
+postCriancaR = do 
+    ((res,_),_) <- runFormPost formCrianca
+    case res of 
+        FormSuccess crianca -> do 
+            runDB $ insert crianca 
+            redirect HomeR

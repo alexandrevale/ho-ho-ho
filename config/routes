@@ -17,4 +17,4 @@
 /responsavel/#UsuarioId         ResponsavelR        GET POST
 
 /empresa/update/#EmpresaId      EmpresaUpdateR      GET POST
-/crianca                        CriancaR            GET
+/crianca                        CriancaR            GET POST
