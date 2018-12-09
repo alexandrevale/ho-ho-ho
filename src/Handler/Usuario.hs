@@ -44,8 +44,7 @@ postUsuarioR = do
             if (usuarioSenha usr) == passwordC then do
                 uid <- runDB $ insert usr
                 redirect $ case usuarioPerfil usr of
-                    -- PadrinhoPerfil      x -> PadrinhoR $ toSqlKey x
-                    PadrinhoPerfil      _ -> undefined
+                    PadrinhoPerfil      _ -> PadrinhoR uid
                     ResponsavelPerfil   _ -> ResponsavelR uid
                     EmpresaPerfil       _ -> EmpresaR uid
             else do 

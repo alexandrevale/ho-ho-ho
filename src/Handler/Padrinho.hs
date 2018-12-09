@@ -16,9 +16,8 @@ formPadrinho = renderBootstrap $ Padrinho
     <$> areq textField "Telefone: " Nothing
     <*> areq textField "CPF: " Nothing
     
-getPadrinhoR :: Handler Html
-getPadrinhoR = do 
-    -- setTitle "Cadastro de Padrinho - Ho Ho Ho"
+getPadrinhoR :: UsuarioId -> Handler Html 
+getPadrinhoR usuarioId = do 
     (widgetForm, enctype) <- generateFormPost formPadrinho
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
@@ -26,10 +25,12 @@ getPadrinhoR = do
         toWidget $(luciusFile "templates/cadastro-padrinho.lucius")
         $(whamletFile "templates/cadastro-padrinho.hamlet")
 
-postPadrinhoR :: Handler Html
-postPadrinhoR = do 
+postPadrinhoR :: UsuarioId -> Handler Html
+postPadrinhoR usuarioId = do 
     ((res,_),_) <- runFormPost formPadrinho
     case res of 
         FormSuccess padrinho -> do 
-            runDB $ insert padrinho 
+            runDB $ do
+                pid <- insert padrinho
+                update usuarioId [UsuarioPerfil =. PadrinhoPerfil (fromSqlKey pid) ]
             redirect HomeR
