@@ -6,9 +6,14 @@
 {-# LANGUAGE QuasiQuotes #-}
 module Handler.Login where
 
--- import Text.Lucius
--- import Text.Julius
+import Yesod
 import Import
+import Network.HTTP.Types.Status
+import Database.Persist.Postgresql
+import Prelude (read)
+
+-- widgetNav :: Maybe Text -> Widget
+-- widgetNav logado = $(whamletFile "templates/homenav.hamlet")
 
 formLogin :: Form (Text,Text)
 formLogin = renderBootstrap $ (,) 

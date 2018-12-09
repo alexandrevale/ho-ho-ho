@@ -1,3 +1,9 @@
-<form action=@{LoginR} method=post enctype=#{enctype}>
-    ^{widgetForm}
-    <input type="submit" value="Logar">
+
+<main>
+    <section>
+        <div .container>
+            <div .row>
+                <div .col-lg-5 .col-md-5 .col-sm-5 .col-xs-12>
+                    <form action=@{LoginR} method=post enctype=#{enctype}>
+                        ^{widgetForm}
+                        <input type="submit" value="Logar">

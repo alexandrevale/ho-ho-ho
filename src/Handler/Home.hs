@@ -4,7 +4,7 @@
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE TypeFamilies #-}
 module Handler.Home where
-import           Yesod
+import Yesod
 import Import
 import Network.HTTP.Types.Status
 import Database.Persist.Postgresql
@@ -14,7 +14,10 @@ import Text.Lucius
 import Prelude (read)
 
 widgetNav :: Maybe Text -> Widget
-widgetNav logado = $(whamletFile "templates/homenav.hamlet")
+widgetNav logado = do
+                    addStylesheet $ StaticR css_bootstrap_css
+                    $(whamletFile "templates/homenav.hamlet") 
+                    toWidget $(luciusFile "templates/homenav.lucius")
 
 getHomeR :: Handler Html
 getHomeR = do 
@@ -32,9 +35,6 @@ getHomeR = do
         -- toWidgetBody $(juliusFile "templates/home.julius")
         addScript $ StaticR js_script_js
         
-        
-
-
 getCadastroR :: Handler Html   
 getCadastroR = do 
     defaultLayout $ do 

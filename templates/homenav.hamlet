@@ -10,8 +10,6 @@
           <span>
           <span>
 
-      
-    
       $maybe usuario <- logado 
           #{usuarioNome $ read $ unpack usuario}
           <div .nav__links>
@@ -23,10 +21,10 @@
                   <input type="submit" value="Sair">
       $nothing
           <div .nav__links>
-            <a href=@{HomeR}>Home
+            <a class="nav-link" href=@{HomeR}>Home
             <a class="nav-link" href=@{PerfilR}>Sacolinhas
-            <a href="">Quem Confia
-            <a href="">Contatos
+            <a class="nav-link" href="">Quem Confia
+            <a class="nav-link" href="">Contatos
               <div .menu__login>
                 <a class="nav-link" href=@{CadastroR}>Cadastrar
-                <a href=@{LoginR}>Acessar
+                <a class="nav-link" href=@{LoginR}>Acessar
