@@ -27,7 +27,7 @@ getCriancaR = do
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
         toWidget $(luciusFile "templates/usuario.lucius")
-        toWidget $(luciusFile "templates/cadastro-empresa.lucius")
+        toWidget $(luciusFile "templates/listar-crianca.lucius")
         $(whamletFile "templates/cadastro-crianca.hamlet")
 
 postCriancaR :: Handler Html
@@ -37,3 +37,11 @@ postCriancaR = do
         FormSuccess crianca -> do 
             runDB $ insert crianca 
             redirect HomeR
+
+getListarCriancaR :: Handler Html
+getListarCriancaR = do
+    crianca <- runDB $ selectList [] [Asc CriancaNome]
+    defaultLayout $ do 
+        addStylesheet $ StaticR css_bootstrap_css
+        $(whamletFile "templates/listar-crianca.hamlet")
+

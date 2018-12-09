@@ -20,3 +20,4 @@
 
 /empresa/update/#EmpresaId      EmpresaUpdateR      GET POST
 /crianca                        CriancaR            GET POST
+/listar-crianca                 ListarCriancaR      GET
