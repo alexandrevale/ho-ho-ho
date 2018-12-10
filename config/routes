@@ -12,6 +12,7 @@
 
 /tipoCadastro                   CadastroR           GET
 /perfil                         PerfilR             GET
+/telaCadastro                   TelaR               GET
 
 /admin                          AdminR              GET
 /padrinho/#UsuarioId            PadrinhoR           GET POST

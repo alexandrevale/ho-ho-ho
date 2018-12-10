@@ -26,5 +26,5 @@
             <a class="nav-link" href="@{HomeR}#quem-confia">Quem Confia
             <a class="nav-link" href=@{HomeR}#contato>Contatos
             <div .menu__login>
-                <a class="nav-link" href=@{CadastroR}>Cadastrar
+                <a class="nav-link" href=@{TelaR}>Cadastrar
                 <a class="nav-link" href=@{LoginR}>Acessar

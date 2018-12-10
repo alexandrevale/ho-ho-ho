@@ -44,6 +44,13 @@ getCadastroR = do
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
         toWidget $(luciusFile "templates/home.lucius")
+        
+getTelaR :: Handler Html 
+getTelaR  = do 
+    defaultLayout $ do 
+        addStylesheet $ StaticR css_bootstrap_css
+        toWidget $(luciusFile "templates/tipocadastro.lucius")
+        $(whamletFile "templates/tipocadastro.hamlet")
 
 
 -- formContato :: Form Contato
