@@ -33,3 +33,8 @@ Crianca
     tamanhocalcado Text
     preferencia Text
     deriving Show Read
+    
+Contato
+    nome Text
+    email Text
+    mensagem Text

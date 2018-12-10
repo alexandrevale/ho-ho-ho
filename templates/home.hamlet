@@ -58,4 +58,30 @@
                   
                 <div .item>
                   <img src=@{StaticR imgs_logos_haskell_png} alt="">  
-                
+    
+    <section #contato>
+        <div .container>
+            <div .row>
+                <div .col-lg-6 .col-md-6 .col-sm-6 .col-xs-12>
+                    <h2 .text-center>Sobre o Projeto
+                    <p> O Ho Ho Ho é um projeto desenvolvido para a disciplina <b>ITE005 Tópicos Especiais em Sistemas para Internet III</b> ministrado pelo professor Alexandre Garcia de Oliveira e desenvolvido pelos alunos Alexandre Pereira do Vale, Andressa Rocha Morgado e Juciara Santos Lima
+                    <p> Stack utilizada:
+                    <ul>
+                        <li> HTML 5
+                        <li> CSS 3
+                        <ul>
+                            <li> Bootstrap 3
+                        <li> JavaScript
+                        <ul>
+                            <li> Jquery
+                        <li> Haskell
+                        <ul>
+                            <li> Yesod
+                        <li> PostgreSQL
+                        <li> Heroku
+                        
+                <div .col-lg-6 .col-md-6 .col-sm-6 .col-xs-12>
+                    <h2>Entre em Contato
+                    
+                    
+^{widgetFooter}

@@ -1,0 +1,7 @@
+<footer .container-fluid>
+    <div .row .wrapper>
+        <div .col-lg-12 .col-md-12 .col-sm-12 .col-xs-12>
+            <p .text-center> Projeto desenvolvido por:
+                <a href="https://www.linkedin.com/in/alexandredovale/"> Alexandre do Vale
+                <a href="https://www.linkedin.com/in/andressa-rocha/"> Andressa Rocha
+                <a href="https://www.linkedin.com/in/juciaraslima/"> Juciara Lima

@@ -7,3 +7,5 @@
                     <form action=@{LoginR} method=post enctype=#{enctype}>
                         ^{widgetForm}
                         <input type="submit" value="Logar">
+                        
+                        

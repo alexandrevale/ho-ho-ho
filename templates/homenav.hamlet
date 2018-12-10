@@ -22,9 +22,9 @@
       $nothing
           <div .nav__links>
             <a class="nav-link" href=@{HomeR}>Home
-            <a class="nav-link" href=@{PerfilR}>Sacolinhas
-            <a class="nav-link" href="">Quem Confia
-            <a class="nav-link" href="">Contatos
-              <div .menu__login>
+            <a class="nav-link" href=@{HomeR}#sacolinhas>Sacolinhas
+            <a class="nav-link" href="@{HomeR}#quem-confia">Quem Confia
+            <a class="nav-link" href=@{HomeR}#contato>Contatos
+            <div .menu__login>
                 <a class="nav-link" href=@{CadastroR}>Cadastrar
                 <a class="nav-link" href=@{LoginR}>Acessar

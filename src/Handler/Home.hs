@@ -9,8 +9,6 @@ import Import
 import Network.HTTP.Types.Status
 import Database.Persist.Postgresql
 import Text.Lucius
--- import Text.Julius
--- import Settings.StaticFiles
 import Prelude (read)
 
 widgetNav :: Maybe Text -> Widget
@@ -19,10 +17,16 @@ widgetNav logado = do
                     $(whamletFile "templates/homenav.hamlet") 
                     toWidget $(luciusFile "templates/homenav.lucius")
 
+widgetFooter :: Widget
+widgetFooter = do
+                addStylesheet $ StaticR css_bootstrap_css
+                $(whamletFile "templates/footer.hamlet") 
+                toWidget $(luciusFile "templates/footer.lucius")
+
 getHomeR :: Handler Html
-getHomeR = do 
-    -- msg <- getMessage
+getHomeR = do
     logado <- lookupSession "_USR"
+    -- (widgetContato, enctype) <- generateFormPost formContato
     defaultLayout $ do 
         setTitle "Home - Ho Ho Ho"
         addScriptRemote "https://code.jquery.com/jquery-3.3.1.js"
@@ -38,12 +42,30 @@ getHomeR = do
 getCadastroR :: Handler Html   
 getCadastroR = do 
     defaultLayout $ do 
-        -- toWidgetHead [hamlet|
-        --     <script src=@{StaticR js_script_js}>
-        -- |]
         addStylesheet $ StaticR css_bootstrap_css
-        -- $(whamletFile "templates/tipocadastro.hamlet")
-        -- toWidget $(luciusFile "templates/tipocadastro.lucius")
         toWidget $(luciusFile "templates/home.lucius")
-        -- toWidgetHead $(juliusFile "templates/home.julius")
 
+
+-- formContato :: Form Contato
+-- formContato = renderBootstrap $ Contato
+--     <$> areq textField "Nome: " Nothing
+--     <*> areq textField "E-mail: " Nothing
+--     <*> areq textField "Mensagem ou sugestão: " Nothing
+    -- <*> areq textareaField "Mensagem ou sugestão: " Nothing
+    
+-- getContatoR :: Handler Html
+-- getContatoR = do 
+--     (widgetContato, enctype) <- generateFormPost formContato
+--     defaultLayout $ do 
+--         addStylesheet $ StaticR css_bootstrap_css
+--         $(whamletFile "templates/usuario.hamlet")
+--         toWidget $(luciusFile "templates/usuario.lucius")
+
+-- postContatoR :: Handler Html
+-- postContatoR = do 
+--     ((res,_),_) <- runFormPost formContato
+--     case res of
+--         FormSuccess (contato) -> do 
+--             cid <- runDB $ insert contato
+--             redirect CadastroR
+--         _ -> redirect HomeR

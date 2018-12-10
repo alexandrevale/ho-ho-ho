@@ -1,0 +1,12 @@
+footer {
+    background-color: #292929;
+    padding: 20px;
+}
+
+footer a,
+footer p {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    margin-right: 5px;
+}

@@ -91,6 +91,11 @@ nav {
   float: right;
 }
 
+main {
+  padding-top: 80px;
+}
+
+
 @media (max-width: 991px) {
   .nav__header {
     width: 100%;
