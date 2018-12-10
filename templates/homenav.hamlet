@@ -14,7 +14,7 @@
           #{usuarioNome $ read $ unpack usuario}
           <div .nav__links>
             <a href=@{PerfilR}>Meu perfil
-            <a class="nav-link"> Montar Sacolinhas
+            <a href=@{ListarCriancaR}> Montar Sacolinhas
             <a href="">Meus Dados
               <div .menu__login>
                 <form action=@{LogoutR} method=post>

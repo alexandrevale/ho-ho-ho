@@ -24,7 +24,7 @@ Responsavel
     cpf Text
     deriving Show Read
     
-Crianca
+Crianca json
     nome Text
     idade Text
     sexo Text
@@ -32,9 +32,17 @@ Crianca
     tamanhoroupa Text
     tamanhocalcado Text
     preferencia Text
+    responsavelid
+    
     deriving Show Read
     
 Contato
     nome Text
     email Text
     mensagem Text
+    
+Sacolinha json
+    responsavelid
+    criancaid
+    padrinhoid
+    empresaid

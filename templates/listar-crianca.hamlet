@@ -37,5 +37,6 @@
                         #{criancaTamanhocalcado crianca}
                     <td>
                         #{criancaPreferencia crianca}
-                    
+                    <td>
+                        <a href="">Adotar
 ^{widgetFooter}  
