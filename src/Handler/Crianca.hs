@@ -35,8 +35,8 @@ formCrianca = renderBootstrap $ Crianca
     <*> areq textField "Tamanho do calçado: " Nothing
     <*> areq textField  "Preferencia: " Nothing
 
-getCriancaR :: Handler Html
-getCriancaR = do 
+getCriancaR :: ResponsavelId -> Handler Html
+getCriancaR responsavelId = do 
     (widgetForm, enctype) <- generateFormPost formCrianca
     logado <- lookupSession "_USR"
     defaultLayout $ do 
@@ -45,8 +45,8 @@ getCriancaR = do
         toWidget $(luciusFile "templates/listar-crianca.lucius")
         $(whamletFile "templates/cadastro-crianca.hamlet")
 
-postCriancaR :: Handler Html
-postCriancaR = do 
+postCriancaR :: ResponsavelId -> Handler Html
+postCriancaR responsavelId = do 
     ((res,_),_) <- runFormPost formCrianca
     case res of 
         FormSuccess crianca -> do 

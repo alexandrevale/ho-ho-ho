@@ -18,7 +18,9 @@
 /padrinho/#UsuarioId            PadrinhoR           GET POST
 /empresa/#UsuarioId             EmpresaR            GET POST
 /responsavel/#UsuarioId         ResponsavelR        GET POST
+/crianca/#ResponsavelId         CriancaR            GET POST
+
 
 /empresa/update/#EmpresaId      EmpresaUpdateR      GET POST
-/crianca                        CriancaR            GET POST
+
 /listar-crianca                 ListarCriancaR      GET

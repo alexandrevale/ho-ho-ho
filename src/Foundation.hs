@@ -42,7 +42,7 @@ instance Yesod App where
     isAuthorized (EmpresaR _) _ = return Authorized
     isAuthorized (ResponsavelR _) _ = return Authorized
     isAuthorized (PadrinhoR _) _ = return Authorized
-    isAuthorized CriancaR _ = return Authorized
+    isAuthorized (CriancaR _) _ = return Authorized
     isAuthorized PerfilR _ = return Authorized
     isAuthorized (EmpresaUpdateR _) _ = return Authorized
     isAuthorized (StaticR _) _ = return Authorized

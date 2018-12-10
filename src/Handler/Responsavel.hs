@@ -24,8 +24,6 @@ widgetFooter = do
                 $(whamletFile "templates/footer.hamlet") 
                 toWidget $(luciusFile "templates/footer.lucius")
 
-
-
 formResponsavel :: Form Responsavel
 formResponsavel = renderBootstrap $ Responsavel
     <$> areq textField "Telefone: " Nothing
@@ -40,14 +38,14 @@ getResponsavelR usuarioId = do
         addStylesheet $ StaticR css_bootstrap_css
         toWidget $(luciusFile "templates/home.lucius")
         toWidget $(luciusFile "templates/cadastro-empresa.lucius")
-        $(whamletFile "templates/cadastro-responsavel.hamlet")
+       -- $(whamletFile "templates/cadastro-responsavel.hamlet")
 
 postResponsavelR :: UsuarioId -> Handler Html
 postResponsavelR usuarioId = do 
     ((res,_),_) <- runFormPost formResponsavel
     case res of 
         FormSuccess responsavel -> do 
-            runDB $ do
+            uid <- runDB $ do
                 rid <- insert responsavel
-                update usuarioId [UsuarioPerfil =. ResponsavelPerfil (fromSqlKey rid) ]
-            redirect HomeR
+                    update usuarioId [UsuarioPerfil =. ResponsavelPerfil (fromSqlKey rid) ]
+                redirect CriancaR uid
