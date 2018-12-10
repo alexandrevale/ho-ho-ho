@@ -10,6 +10,21 @@ import Import
 import Text.Lucius
 import Text.Julius
 import Database.Persist.Sql
+import Prelude (read)
+
+widgetNav :: Maybe Text -> Widget
+widgetNav logado = do
+                    addStylesheet $ StaticR css_bootstrap_css
+                    $(whamletFile "templates/homenav.hamlet") 
+                    toWidget $(luciusFile "templates/homenav.lucius")
+
+widgetFooter :: Widget
+widgetFooter = do
+                addStylesheet $ StaticR css_bootstrap_css
+                $(whamletFile "templates/footer.hamlet") 
+                toWidget $(luciusFile "templates/footer.lucius")
+
+
 
 formResponsavel :: Form Responsavel
 formResponsavel = renderBootstrap $ Responsavel
@@ -19,6 +34,7 @@ formResponsavel = renderBootstrap $ Responsavel
 getResponsavelR :: UsuarioId -> Handler Html 
 getResponsavelR usuarioId = do 
     -- setTitle "Cadastro de Empresa - Ho Ho Ho"
+    logado <- lookupSession "_USR"
     (widgetForm, enctype) <- generateFormPost formResponsavel
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css

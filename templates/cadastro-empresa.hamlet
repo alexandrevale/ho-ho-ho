@@ -1,23 +1,5 @@
-<nav>
-  <div .nav__header>
-    <div .nav__title>
-      <h1>Ho Ho Ho</h1>
+^{widgetNav logado}
 
-    <div .nav__menu>
-      <div .nav__btn>
-        <button #nav__btn--check>
-          <span>
-          <span>
-          <span>
-      <div .nav__links>
-        <a href="">Home
-        <a href="#sacolinhas">Sacolinhas
-        <a href="">Quem Confia
-        <a href="">Contatos
-        <a class="nav-link" href=@{CadastroR}> 
-                    Cadastrar
-        <div .menu__login>
-          <a href="">Acessar
 <main>          
   <div .container>
       <div .tituloEmpresa>
@@ -29,3 +11,5 @@
               ^{widgetForm}
               <div .enviarCadastro>
                <input type="submit" value="Salvar">
+
+^{widgetFooter}

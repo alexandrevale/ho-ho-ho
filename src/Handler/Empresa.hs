@@ -10,6 +10,22 @@ import Import
 import Text.Lucius
 import Text.Julius
 import Database.Persist.Sql
+import Prelude (read)
+
+widgetNav :: Maybe Text -> Widget
+widgetNav logado = do
+                    addStylesheet $ StaticR css_bootstrap_css
+                    $(whamletFile "templates/homenav.hamlet") 
+                    toWidget $(luciusFile "templates/homenav.lucius")
+
+widgetFooter :: Widget
+widgetFooter = do
+                addStylesheet $ StaticR css_bootstrap_css
+                $(whamletFile "templates/footer.hamlet") 
+                toWidget $(luciusFile "templates/footer.lucius")
+
+
+
 
 formEmpresa :: Form Empresa
 formEmpresa = renderBootstrap $ Empresa
@@ -26,6 +42,7 @@ formEmpresaUpdate telefone endereco cnpj = renderBootstrap $ Empresa
 getEmpresaR :: UsuarioId -> Handler Html 
 getEmpresaR usuarioId = do 
     -- setTitle "Cadastro de Empresa - Ho Ho Ho"
+    logado <- lookupSession "_USR"
     (widgetForm, enctype) <- generateFormPost formEmpresa
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
@@ -45,6 +62,7 @@ postEmpresaR usuarioId = do
             
 getEmpresaUpdateR :: EmpresaId -> Handler Html
 getEmpresaUpdateR empresaId = do
+    logado <- lookupSession "_USR"
     (Empresa telefone endereco cnpj) <- runDB $ get404 empresaId
     -- pega o formulario e retorna widgetForm que permite usar o hamlet junto com o enctype poe no formulario e o res é indica se eh um post ou get
     -- x é um array de erros

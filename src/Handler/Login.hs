@@ -8,12 +8,28 @@ module Handler.Login where
 
 import Yesod
 import Import
+import Text.Lucius
 import Network.HTTP.Types.Status
 import Database.Persist.Postgresql
 import Prelude (read)
 
 -- widgetNav :: Maybe Text -> Widget
 -- widgetNav logado = $(whamletFile "templates/homenav.hamlet")
+
+widgetNav :: Maybe Text -> Widget
+widgetNav logado = do
+                    addStylesheet $ StaticR css_bootstrap_css
+                    $(whamletFile "templates/homenav.hamlet") 
+                    toWidget $(luciusFile "templates/homenav.lucius")
+
+widgetFooter :: Widget
+widgetFooter = do
+                addStylesheet $ StaticR css_bootstrap_css
+                $(whamletFile "templates/footer.hamlet") 
+                toWidget $(luciusFile "templates/footer.lucius")
+
+
+
 
 formLogin :: Form (Text,Text)
 formLogin = renderBootstrap $ (,) 
@@ -23,11 +39,13 @@ formLogin = renderBootstrap $ (,)
 getLoginR :: Handler Html
 getLoginR = do 
     -- setTitle "Login - Ho Ho Ho"
+    logado <- lookupSession "_USR"
     (widgetForm, enctype) <- generateFormPost formLogin
     msg <- getMessage
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
         $(whamletFile "templates/login.hamlet")
+        toWidget $(luciusFile "templates/login.lucius")
     
 postLoginR :: Handler Html 
 postLoginR = do 

@@ -1,3 +1,6 @@
+^{widgetNav logado}
+
+
 <main>
     <div .container>
         <div .tituloEmpresa>
@@ -9,3 +12,6 @@
                 ^{widgetForm}
                 <div .enviarCadastro>
                  <input type="submit" value="Salvar">
+
+
+^{widgetFooter}

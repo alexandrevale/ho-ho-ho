@@ -10,6 +10,21 @@ import Import
 import Text.Lucius
 import Text.Julius
 import Database.Persist.Sql
+import Prelude (read)
+
+widgetNav :: Maybe Text -> Widget
+widgetNav logado = do
+                    addStylesheet $ StaticR css_bootstrap_css
+                    $(whamletFile "templates/homenav.hamlet") 
+                    toWidget $(luciusFile "templates/homenav.lucius")
+
+widgetFooter :: Widget
+widgetFooter = do
+                addStylesheet $ StaticR css_bootstrap_css
+                $(whamletFile "templates/footer.hamlet") 
+                toWidget $(luciusFile "templates/footer.lucius")
+
+
 
 formPadrinho :: Form Padrinho
 formPadrinho = renderBootstrap $ Padrinho
@@ -18,6 +33,7 @@ formPadrinho = renderBootstrap $ Padrinho
     
 getPadrinhoR :: UsuarioId -> Handler Html 
 getPadrinhoR usuarioId = do 
+    logado <- lookupSession "_USR"
     (widgetForm, enctype) <- generateFormPost formPadrinho
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css

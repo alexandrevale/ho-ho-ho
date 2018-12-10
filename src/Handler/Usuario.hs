@@ -42,6 +42,7 @@ formUsuario = renderBootstrap $  pure (,)
 
 getUsuarioR :: Handler Html
 getUsuarioR = do 
+    logado <- lookupSession "_USR"
     -- setTitle "Cadastro Base - Ho Ho Ho"
     (widgetUsu, enctype) <- generateFormPost formUsuario
     msg <- getMessage --mensagem que avisa se o usuarioc cadastrou certo
@@ -71,6 +72,7 @@ postUsuarioR = do
         
 getListarUsuarioR :: Handler Html
 getListarUsuarioR = do
+    logado <- lookupSession "_USR"
     usuario <- runDB $ selectList [] [Asc UsuarioNome]
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css

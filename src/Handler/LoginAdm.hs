@@ -9,6 +9,21 @@ module Handler.LoginAdm where
 import Text.Lucius
 import Text.Julius
 import Import
+import Prelude (read)
+
+widgetNav :: Maybe Text -> Widget
+widgetNav logado = do
+                    addStylesheet $ StaticR css_bootstrap_css
+                    $(whamletFile "templates/homenav.hamlet") 
+                    toWidget $(luciusFile "templates/homenav.lucius")
+
+widgetFooter :: Widget
+widgetFooter = do
+                addStylesheet $ StaticR css_bootstrap_css
+                $(whamletFile "templates/footer.hamlet") 
+                toWidget $(luciusFile "templates/footer.lucius")
+
+
 
 formLoginadm :: Form (Text,Text)
 formLoginadm = renderBootstrap $ (,) 
@@ -18,7 +33,7 @@ formLoginadm = renderBootstrap $ (,)
 getLoginadmR :: Handler Html
 getLoginadmR = do 
     (widgetForm, enctype) <- generateFormPost formLoginadm
-    msg <- getMessage
+    logado <- lookupSession "_USR"
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
 --        HEAD

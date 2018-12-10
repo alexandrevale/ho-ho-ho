@@ -1,35 +1,41 @@
-<table class="table-stripped">
-    <thead>
-        <tr>
-            <th>
-                NOME
-            <th>
-               IDADE
-            <th>
-                SEXO
-            <th>
-                RG
-            <th>
-                TAMANHO DA ROUPA
-            <th>
-                TAMANHO DO CALÇADO
-            <th>
-                PREFERÊNCIA 
+^{widgetNav logado}
 
-    <tbody class="formulario">
-        $forall (Entity criacaid crianca) <- crianca
+<main>
+
+    <table class="table-stripped">
+        <thead>
             <tr>
-                <td>
-                    #{criancaNome crianca}
-                <td>
-                    #{criancaIdade crianca}
-                <td>
-                    #{criancaSexo crianca}
-                <td>
-                    #{criancaRg crianca}
-                <td>
-                    #{criancaTamanhoroupa crianca}
-                <td>
-                    #{criancaTamanhocalcado crianca}
-                <td>
-                    #{criancaPreferencia crianca}
+                <th>
+                    NOME
+                <th>
+                   IDADE
+                <th>
+                    SEXO
+                <th>
+                    RG
+                <th>
+                    TAMANHO DA ROUPA
+                <th>
+                    TAMANHO DO CALÇADO
+                <th>
+                    PREFERÊNCIA 
+    
+        <tbody class="formulario">
+            $forall (Entity criacaid crianca) <- crianca
+                <tr>
+                    <td>
+                        #{criancaNome crianca}
+                    <td>
+                        #{criancaIdade crianca}
+                    <td>
+                        #{criancaSexo crianca}
+                    <td>
+                        #{criancaRg crianca}
+                    <td>
+                        #{criancaTamanhoroupa crianca}
+                    <td>
+                        #{criancaTamanhocalcado crianca}
+                    <td>
+                        #{criancaPreferencia crianca}
+                    
+^{widgetFooter}  

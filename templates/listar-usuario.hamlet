@@ -1,15 +1,20 @@
-<table class="table-stripped">
-    <thead>
-        <tr>
-            <th>
-                NOME
-            <th>
-                E-MAIL
+^{widgetNav logado}
 
-    <tbody>
-        $forall (Entity usuarioid usuario) <- usuario
+<main>
+    <table class="table-stripped">
+        <thead>
             <tr>
-                <td>
-                    #{usuarioNome usuario}
-                <td>
-                    #{usuarioEmail usuario}
+                <th>
+                    NOME
+                <th>
+                    E-MAIL
+    
+        <tbody>
+            $forall (Entity usuarioid usuario) <- usuario
+                <tr>
+                    <td>
+                        #{usuarioNome usuario}
+                    <td>
+                        #{usuarioEmail usuario}
+                        
+^{widgetFooter}  

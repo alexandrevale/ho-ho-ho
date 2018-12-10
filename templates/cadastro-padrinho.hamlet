@@ -1,3 +1,5 @@
+^{widgetNav logado}
+
 <main>
     <div .container>
         <div .tituloPadrinho>
@@ -9,3 +11,5 @@
                 ^{widgetForm}
                 <div .enviarCadastro>
                  <input type="submit" value="Enviar">
+                 
+^{widgetFooter}

@@ -1,0 +1,9 @@
+.banner--login {
+    background: url(@{StaticR imgs_bannerlogin_jpg}) no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

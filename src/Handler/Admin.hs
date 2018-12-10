@@ -8,8 +8,7 @@ module Handler.Admin where
 
 import Import
 import Text.Lucius
-import Text.Julius
-import Database.Persist.Sql
+-- import Database.Persist.Sql
 import Prelude (read)
 
 widgetNav :: Maybe Text -> Widget
@@ -26,6 +25,7 @@ widgetFooter = do
 
 getAdminR :: Handler Html   
 getAdminR = do 
+    logado <- lookupSession "_USR"
     usuarios <- runDB $ selectList [] [Asc UsuarioNome]
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
