@@ -68,7 +68,7 @@
         <div .container>
             <div .row>
                 <div .col-lg-6 .col-md-6 .col-sm-6 .col-xs-12>
-                    <h2 .text-center>Sobre o Projeto
+                    <h2 .text-center .text--blue>Sobre o Projeto
                     <p> O Ho Ho Ho é um projeto desenvolvido para a disciplina <b>ITE005 Tópicos Especiais em Sistemas para Internet III</b> ministrado pelo professor Alexandre Garcia de Oliveira e desenvolvido pelos alunos Alexandre Pereira do Vale, Andressa Rocha Morgado e Juciara Santos Lima
                     <p> Stack utilizada:
                     <ul>
@@ -86,7 +86,10 @@
                         <li> Heroku
                         
                 <div .col-lg-6 .col-md-6 .col-sm-6 .col-xs-12>
-                    <h2>Entre em Contato
-                    
+                    <h2 .text-center .text--blue>Entre em Contato
+                    <form action=@{ContatoR} method=post enctype=#{enctype}>
+                      ^{widgetCtt}
+                        <input type="submit" value="Enviar" .btn .btn--contato>
+                      
                     
 ^{widgetFooter}

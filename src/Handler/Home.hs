@@ -10,6 +10,7 @@ import Network.HTTP.Types.Status
 import Database.Persist.Postgresql
 import Text.Lucius
 import Prelude (read)
+import Database.Persist.Sql
 
 widgetNav :: Maybe Text -> Widget
 widgetNav logado = do
@@ -26,7 +27,7 @@ widgetFooter = do
 getHomeR :: Handler Html
 getHomeR = do
     logado <- lookupSession "_USR"
-    -- (widgetContato, enctype) <- generateFormPost formContato
+    (widgetCtt, enctype) <- generateFormPost formContato
     defaultLayout $ do 
         setTitle "Home - Ho Ho Ho"
         addScriptRemote "https://code.jquery.com/jquery-3.3.1.js"
@@ -53,26 +54,17 @@ getTelaR  = do
         $(whamletFile "templates/tipocadastro.hamlet")
 
 
--- formContato :: Form Contato
--- formContato = renderBootstrap $ Contato
---     <$> areq textField "Nome: " Nothing
---     <*> areq textField "E-mail: " Nothing
---     <*> areq textField "Mensagem ou sugestão: " Nothing
-    -- <*> areq textareaField "Mensagem ou sugestão: " Nothing
+formContato :: Form Contato
+formContato = renderBootstrap $ Contato
+    <$> areq textField "Nome: " Nothing
+    <*> areq textField "E-mail: " Nothing
+    <*> aopt textareaField "Mensagem: " Nothing
     
--- getContatoR :: Handler Html
--- getContatoR = do 
---     (widgetContato, enctype) <- generateFormPost formContato
---     defaultLayout $ do 
---         addStylesheet $ StaticR css_bootstrap_css
---         $(whamletFile "templates/usuario.hamlet")
---         toWidget $(luciusFile "templates/usuario.lucius")
-
--- postContatoR :: Handler Html
--- postContatoR = do 
---     ((res,_),_) <- runFormPost formContato
---     case res of
---         FormSuccess (contato) -> do 
---             cid <- runDB $ insert contato
---             redirect CadastroR
---         _ -> redirect HomeR
+postContatoR :: Handler Html
+postContatoR = do 
+    ((res,_),_) <- runFormPost formContato
+    case res of 
+        FormSuccess contato -> do 
+            runDB $ do
+                insert contato
+            redirect HomeR

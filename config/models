@@ -38,7 +38,7 @@ Crianca json
 Contato
     nome Text
     email Text
-    mensagem Text
+    mensagens Textarea
     deriving Show Read
     
 Sacolinha json
