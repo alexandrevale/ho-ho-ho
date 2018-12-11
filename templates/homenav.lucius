@@ -22,6 +22,16 @@ nav {
   padding: 7.5px;
 }
 
+.nav__title h1 {
+  margin: 0px;
+  margin-top: -2px;
+  padding-top: 65px;
+  overflow: hidden;
+  background: url(@{StaticR imgs_logo_png}) no-repeat center center;
+  width: 215px;
+  height: 0 !important;
+}
+
 .nav__menu {
   display: inline-block;
   width: 75%;
@@ -96,7 +106,7 @@ main {
 }
 
 form {
-  width: 100%;
+  width: 300px;
   padding: 15px;
 }
 
@@ -112,6 +122,12 @@ input {
   margin-top: 15px;
 }
 
+.ancora {
+   display: block;
+   position: relative;
+   top: -80px;
+   visibility: hidden;
+}
 
 
 @media (max-width: 991px) {

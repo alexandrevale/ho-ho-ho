@@ -1,14 +1,14 @@
 ^{widgetNav logado}
 
 <main>
-    <div .container>
-        <div .row>
+    <div .container-fluid .banner--cadastrar>
+        <div .row .wrapper>
             <div .col-lg-6 .col-md-6 .col-sm-6 .col-xs-12>    
                 <h2>Cadastro Inicial
              
             <div .col-lg-6 .col-md-6 .col-sm-6 .col-xs-12>  
                 <form action=@{UsuarioR} method=post enctype=#{enctype}>
                     ^{widgetUsu}
-                    <input type="submit" value="Cadastrar" .btn-primary>
+                    <input type="submit" value="Cadastrar" .btn .btn--cadastrar>
 
 ^{widgetFooter}

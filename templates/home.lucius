@@ -1,4 +1,9 @@
-#banner {
+section {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#banner--home {
   height: 100vh;
   background: url(@{StaticR imgs_banner_jpg}) no-repeat center center;
   background-size: cover;
@@ -20,6 +25,10 @@ h2 {
   margin: 0;
 }
 
+.text--blue {
+  color: #c8d6e5;
+}
+
 .btn {
   width: 120px;
   height: 50px;
@@ -28,9 +37,12 @@ h2 {
   padding: 15px;
 }
 
+#sacolinhas--content {
+  background: #c8d6e5;
+}
+
 .card {
   padding: 15px;
-  background: #c8d6e5;
 }
 
 .card img {
