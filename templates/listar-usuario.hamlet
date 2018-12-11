@@ -8,6 +8,9 @@
                     NOME
                 <th>
                     E-MAIL
+
+
+
     
         <tbody>
             $forall (Entity usuarioid usuario) <- usuario
@@ -16,5 +19,7 @@
                         #{usuarioNome usuario}
                     <td>
                         #{usuarioEmail usuario}
+
+
                         
 ^{widgetFooter}  

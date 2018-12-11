@@ -33,16 +33,17 @@ Crianca json
     tamanhocalcado Text
     preferencia Text
     responsavelid
-    
     deriving Show Read
     
 Contato
     nome Text
     email Text
     mensagem Text
+    deriving Show Read
     
 Sacolinha json
     responsavelid
     criancaid
     padrinhoid
     empresaid
+    deriving Show Read
