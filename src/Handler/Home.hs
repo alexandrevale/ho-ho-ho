@@ -58,7 +58,7 @@ formContato :: Form Contato
 formContato = renderBootstrap $ Contato
     <$> areq textField "Nome: " Nothing
     <*> areq textField "E-mail: " Nothing
-    <*> aopt textareaField "Mensagem: " Nothing
+    <*> areq textareaField "Mensagem: " Nothing
     
 postContatoR :: Handler Html
 postContatoR = do 

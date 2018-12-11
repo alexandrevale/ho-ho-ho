@@ -7,6 +7,7 @@
 /contato                        ContatoR            POST
 /usuario                        UsuarioR            GET POST
 /listar-usuario                 ListarUsuarioR      GET
+/listar-mensagens               ListarMensagensR    GET
 /login                          LoginR              GET POST
 /logout                         LogoutR             POST
 
