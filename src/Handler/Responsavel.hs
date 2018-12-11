@@ -38,7 +38,7 @@ getResponsavelR usuarioId = do
         addStylesheet $ StaticR css_bootstrap_css
         toWidget $(luciusFile "templates/home.lucius")
         toWidget $(luciusFile "templates/cadastro-empresa.lucius")
-       -- $(whamletFile "templates/cadastro-responsavel.hamlet")
+        $(whamletFile "templates/cadastro-responsavel.hamlet")
 
 postResponsavelR :: UsuarioId -> Handler Html
 postResponsavelR usuarioId = do 

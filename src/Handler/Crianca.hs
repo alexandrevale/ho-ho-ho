@@ -50,7 +50,8 @@ postCriancaR responsavelId = do
     ((res,_),_) <- runFormPost formCrianca
     case res of 
         FormSuccess crianca -> do 
-            runDB $ insert crianca 
+            runDB $ insert crianca
+          --  update responsavelId [CriancaPerfil =. PadrinhoPerfil (fromSqlKey pid) ] 
             redirect HomeR
 
 getListarCriancaR :: Handler Html

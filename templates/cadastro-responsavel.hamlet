@@ -10,6 +10,6 @@
             <form action=@{ResponsavelR usuarioId} method=post enctype=#{enctype}>
                 ^{widgetForm}
                 <div .enviarCadastro>
-                 <a href=@{CriancaR}> Cadastre a criança
+                <input type="submit" value="Cadastrar criança">
                  
 ^{widgetFooter}
