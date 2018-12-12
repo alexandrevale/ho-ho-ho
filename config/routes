@@ -23,6 +23,7 @@
 
 /empresa/#UsuarioId             EmpresaR            GET POST
 /empresa/update/#EmpresaId      EmpresaUpdateR      GET POST
+/padrinho/update/#PadrinhoId    PadrinhoUpdateR     GET POST
 
 /crianca/#ResponsavelId         CriancaR            GET POST
 /listar-crianca                 ListarCriancaR      GET

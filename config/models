@@ -5,9 +5,6 @@ Usuario
     perfil Perfil
     deriving Show Read
     
-TipoCadastro
-    nome Text
-    
 Padrinho
     telefone Text
     cpf Text

@@ -31,6 +31,11 @@ formPadrinho = renderBootstrap $ Padrinho
     <$> areq textField "Telefone: " Nothing
     <*> areq textField "CPF: " Nothing
     
+formPadrinhoUpdate :: Text -> Text -> Form Padrinho
+formPadrinhoUpdate telefone cpf = renderBootstrap $ Padrinho
+    <$> areq textField "Telefone: " (Just telefone)
+    <*> areq textField "CPF: " (Just cpf)
+    
 getPadrinhoR :: UsuarioId -> Handler Html 
 getPadrinhoR usuarioId = do 
     logado <- lookupSession "_USR"
@@ -50,3 +55,19 @@ postPadrinhoR usuarioId = do
                 pid <- insert padrinho
                 update usuarioId [UsuarioPerfil =. PadrinhoPerfil (fromSqlKey pid) ]
             redirect HomeR
+            
+getPadrinhoUpdateR :: PadrinhoId -> Handler Html
+getPadrinhoUpdateR padrinhoId = do
+    logado <- lookupSession "_USR"
+    (Padrinho telefone cpf) <- runDB $ get404 padrinhoId
+    ((res, widgetForm ), enctype) <- runFormPost $ formPadrinhoUpdate telefone cpf
+    case res of
+        FormMissing -> defaultLayout $(whamletFile "templates/alterarpadrinho.hamlet")
+        FormFailure x -> redirect $ PadrinhoUpdateR padrinhoId
+        FormSuccess padrinho -> do 
+            runDB $ do
+                replace padrinhoId padrinho
+            redirect HomeR
+            
+postPadrinhoUpdateR :: PadrinhoId -> Handler Html
+postPadrinhoUpdateR padrinhoId = getPadrinhoUpdateR padrinhoId
