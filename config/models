@@ -21,7 +21,7 @@ Responsavel
     cpf Text
     deriving Show Read
     
-Crianca json
+Crianca
     nome Text
     idade Text
     sexo Text
@@ -38,9 +38,7 @@ Contato
     mensagem Textarea
     deriving Show Read
     
-Sacolinha json
-    responsavelid
-    criancaid
-    padrinhoid
-    empresaid
+Sacolinha
+    criancaid CriancaId
+    adotador Perfil
     deriving Show Read

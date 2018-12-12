@@ -21,7 +21,7 @@
                     PREFERÊNCIA 
     
         <tbody class="formulario">
-            $forall (Entity criacaid crianca) <- crianca
+            $forall (Entity criancaId crianca) <- crianca
                 <tr>
                     <td>
                         #{criancaNome crianca}
@@ -38,5 +38,6 @@
                     <td>
                         #{criancaPreferencia crianca}
                     <td>
-                        <a href="">Adotar
+                        <form action=@{SacolinhaR criancaId} method="POST">
+                            <button> Adotar
 ^{widgetFooter}  

@@ -7,7 +7,7 @@
 /contato                        ContatoR            POST
 /usuario                        UsuarioR            GET POST
 /listar-usuario                 ListarUsuarioR      GET
-/deletar-usuario/#UsuarioId/    DeletarUsuarioR     POST
+/deletar-usuario/#UsuarioId     DeletarUsuarioR     POST
 /listar-mensagens               ListarMensagensR    GET
 /login                          LoginR              GET POST
 /logout                         LogoutR             POST
@@ -15,6 +15,7 @@
 /tipoCadastro                   CadastroR           GET
 /perfil                         PerfilR             GET
 /telaCadastro                   TelaR               GET
+/cadastro/sacolinha/#CriancaId  SacolinhaR          POST
 
 /admin                          AdminR              GET
 /padrinho/#UsuarioId            PadrinhoR           GET POST

@@ -38,6 +38,4 @@ getPerfilR = do
             getEmpresaUpdateR (toSqlKey x)
         
         Just (Usuario _ _ _ (ResponsavelPerfil x)) ->
-            defaultLayout $ do
-                toWidget $(luciusFile "templates/cadastro-empresa.lucius")
-                $(whamletFile "templates/perfilResponsavel.hamlet")
+            undefined

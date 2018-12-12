@@ -52,7 +52,6 @@ postCriancaR responsavelId = do
     case res of 
         FormSuccess crianca -> do 
             runDB $ insert crianca
-          --  update responsavelId [CriancaPerfil =. PadrinhoPerfil (fromSqlKey pid) ] 
             redirect HomeR
 
 getListarCriancaR :: Handler Html
@@ -62,4 +61,12 @@ getListarCriancaR = do
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
         $(whamletFile "templates/listar-crianca.hamlet")
+        
+postSacolinhaR :: CriancaId -> Handler Html
+postSacolinhaR  criancaId = do 
+    logado <- lookupSession "_USR"
+    case fmap (read . unpack) logado of
+        Just (Usuario _ _ _ x) -> do
+            _ <- runDB $ insert $ Sacolinha criancaId x
+            redirect HomeR
 

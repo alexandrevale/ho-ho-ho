@@ -28,9 +28,6 @@ widgetFooter = do
                 $(whamletFile "templates/footer.hamlet") 
                 toWidget $(luciusFile "templates/footer.lucius")
 
-
-
-
 formLogin :: Form (Text,Text)
 formLogin = renderBootstrap $ (,) 
     <$> areq emailField "E-mail: " Nothing
