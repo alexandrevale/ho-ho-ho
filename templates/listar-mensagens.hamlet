@@ -7,11 +7,11 @@
                 <table class="table-stripped">
                     <thead>
                         <tr>
-                            <th>
+                            <th .text-center>
                                 Nome
-                            <th>
+                            <th .text-center>
                                 E-mail
-                            <th>
+                            <th .text-center>
                                 Mensagem
             
                     <tbody>

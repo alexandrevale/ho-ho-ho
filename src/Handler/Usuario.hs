@@ -76,4 +76,11 @@ getListarUsuarioR = do
     usuario <- runDB $ selectList [] [Asc UsuarioNome]
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
+        toWidget $(luciusFile "templates/tabelas.lucius")
         $(whamletFile "templates/listar-usuario.hamlet")
+        
+        
+postDeletarUsuarioR :: UsuarioId -> Handler Html
+postDeletarUsuarioR usrid = do 
+    runDB $ delete usrid
+    redirect ListarUsuarioR

@@ -11,6 +11,8 @@
                                 Nome
                             <th>
                                 E-mail
+                            <th>
+                                Deletar
             
                     <tbody>
                         $forall (Entity usuarioid usuario) <- usuario
@@ -19,5 +21,8 @@
                                     #{usuarioNome usuario}
                                 <td>
                                     #{usuarioEmail usuario}
+                                <td>
+                                    <form action=@{DeletarUsuarioR usuarioid} method=post>
+                                        <input type="submit" value="X">
 
 ^{widgetFooter}  

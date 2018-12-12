@@ -75,4 +75,5 @@ getListarMensagensR = do
     contato <- runDB $ selectList [] [Asc ContatoNome]
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
+        toWidget $(luciusFile "templates/tabelas.lucius")
         $(whamletFile "templates/listar-mensagens.hamlet")
