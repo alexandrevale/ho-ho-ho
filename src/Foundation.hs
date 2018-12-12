@@ -51,7 +51,7 @@ instance Yesod App where
     isAuthorized (PadrinhoUpdateR _) _ = return Authorized
     isAuthorized (SacolinhaR _) _ = return Authorized
     isAuthorized (StaticR _) _ = return Authorized
-    
+    isAuthorized ListarCriancaAdotadaR _ = return Authorized
     
     
 instance YesodPersist App where

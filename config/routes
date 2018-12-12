@@ -3,28 +3,29 @@
 /favicon.ico FaviconR GET
 /robots.txt RobotsR GET
 
-/                               HomeR               GET 
-/contato                        ContatoR            POST
-/usuario                        UsuarioR            GET POST
-/listar-usuario                 ListarUsuarioR      GET
-/deletar-usuario/#UsuarioId     DeletarUsuarioR     POST
-/listar-mensagens               ListarMensagensR    GET
-/login                          LoginR              GET POST
-/logout                         LogoutR             POST
+/                               HomeR                 GET 
+/contato                        ContatoR              POST
+/usuario                        UsuarioR              GET POST
+/listar-usuario                 ListarUsuarioR        GET
+/deletar-usuario/#UsuarioId     DeletarUsuarioR       POST
+/listar-mensagens               ListarMensagensR      GET
+/login                          LoginR                GET POST
+/logout                         LogoutR               POST
 
-/tipoCadastro                   CadastroR           GET
-/perfil                         PerfilR             GET
-/telaCadastro                   TelaR               GET
-/cadastro/sacolinha/#CriancaId  SacolinhaR          POST
+/tipoCadastro                   CadastroR             GET
+/perfil                         PerfilR               GET
+/telaCadastro                   TelaR                 GET
+/cadastro/sacolinha/#CriancaId  SacolinhaR            POST
 
-/admin                          AdminR              GET
-/padrinho/#UsuarioId            PadrinhoR           GET POST
+/admin                          AdminR                GET
+/padrinho/#UsuarioId            PadrinhoR             GET POST
 
-/responsavel/#UsuarioId         ResponsavelR        GET POST
+/responsavel/#UsuarioId         ResponsavelR          GET POST
 
-/empresa/#UsuarioId             EmpresaR            GET POST
-/empresa/update/#EmpresaId      EmpresaUpdateR      GET POST
-/padrinho/update/#PadrinhoId    PadrinhoUpdateR     GET POST
+/empresa/#UsuarioId             EmpresaR              GET POST
+/empresa/update/#EmpresaId      EmpresaUpdateR        GET POST
+/padrinho/update/#PadrinhoId    PadrinhoUpdateR       GET POST
 
-/crianca/#ResponsavelId         CriancaR            GET POST
-/listar-crianca                 ListarCriancaR      GET
+/crianca/#ResponsavelId         CriancaR              GET POST
+/listar-crianca                 ListarCriancaR        GET
+/listar-meus-adotados           ListarCriancaAdotadaR GET

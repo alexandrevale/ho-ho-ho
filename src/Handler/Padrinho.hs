@@ -11,6 +11,7 @@ import Text.Lucius
 import Text.Julius
 import Database.Persist.Sql
 import Prelude (read)
+import Data.Maybe(fromJust)
 
 widgetNav :: Maybe Text -> Widget
 widgetNav logado = do
@@ -71,3 +72,13 @@ getPadrinhoUpdateR padrinhoId = do
             
 postPadrinhoUpdateR :: PadrinhoId -> Handler Html
 postPadrinhoUpdateR padrinhoId = getPadrinhoUpdateR padrinhoId
+
+getListarCriancaAdotadaR :: Handler Html
+getListarCriancaAdotadaR = do
+    logado <- lookupSession "_USR"
+    let perfil = usuarioPerfil . read . unpack . fromJust $ logado
+    sacolinha <- runDB $ selectList [SacolinhaAdotador ==. perfil] []
+    crianca <- runDB $ selectList [CriancaId <-. (fmap (sacolinhaCriancaid . entityVal) sacolinha)] []
+    defaultLayout $ do 
+        addStylesheet $ StaticR css_bootstrap_css
+        $(whamletFile "templates/listar-crianca-adotada.hamlet")
