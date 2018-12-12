@@ -46,5 +46,7 @@ postResponsavelR usuarioId = do
     case res of 
         FormSuccess responsavel -> do 
             rid <- runDB $ do
-                insert responsavel
+                rid <- insert responsavel
+                update usuarioId [UsuarioPerfil =. ResponsavelPerfil (fromSqlKey rid) ]
+                return rid
             redirect $ CriancaR rid

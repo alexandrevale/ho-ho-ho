@@ -33,8 +33,8 @@ formPadrinho = renderBootstrap $ Padrinho
     
 formPadrinhoUpdate :: Text -> Text -> Form Padrinho
 formPadrinhoUpdate telefone cpf = renderBootstrap $ Padrinho
-    <$> areq textField "Telefone: " (Just telefone)
-    <*> areq textField "CPF: " (Just cpf)
+    <$> areq textField "Telefone: "(Just telefone)
+    <*> areq textField "CPF: "(Just cpf)
     
 getPadrinhoR :: UsuarioId -> Handler Html 
 getPadrinhoR usuarioId = do 

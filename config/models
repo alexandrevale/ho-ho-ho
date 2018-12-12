@@ -29,7 +29,7 @@ Crianca json
     tamanhoroupa Text
     tamanhocalcado Text
     preferencia Text
-    responsavelid
+    responsavelid ResponsavelId
     deriving Show Read
     
 Contato

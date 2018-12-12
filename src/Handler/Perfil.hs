@@ -7,9 +7,12 @@
 module Handler.Perfil where
 
 import Import
+import Database.Persist.Sql(toSqlKey)
 import Text.Lucius
 import Text.Julius
 import Prelude (read)
+import Handler.Empresa(getEmpresaUpdateR)
+import Handler.Padrinho(getPadrinhoUpdateR)
 
 widgetNav :: Maybe Text -> Widget
 widgetNav logado = do
@@ -27,11 +30,14 @@ widgetFooter = do
 getPerfilR :: Handler Html   
 getPerfilR = do
     logado <- lookupSession "_USR"
-    defaultLayout $ do 
-        -- toWidgetHead [hamlet|
-        --     <script src=@{StaticR js_script_js}>
-        -- |]
-        addStylesheet $ StaticR css_bootstrap_css
-        $(whamletFile "templates/perfil.hamlet")
-        toWidget $(luciusFile "templates/home.lucius")
-        -- toWidgetHead $(juliusFile "templates/home.julius")
+    case fmap (read . unpack) logado of
+        Just (Usuario _ _ _ (PadrinhoPerfil x)) -> 
+            getPadrinhoUpdateR (toSqlKey x)
+            
+        Just (Usuario _ _ _ (EmpresaPerfil x)) ->
+            getEmpresaUpdateR (toSqlKey x)
+        
+        Just (Usuario _ _ _ (ResponsavelPerfil x)) ->
+            defaultLayout $ do
+                toWidget $(luciusFile "templates/cadastro-empresa.lucius")
+                $(whamletFile "templates/perfilResponsavel.hamlet")

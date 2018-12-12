@@ -13,9 +13,9 @@
       $maybe usuario <- logado 
           #{usuarioNome $ read $ unpack usuario}
           <div .nav__links>
-            <a href=@{PerfilR}>Meu perfil
+            <a href="">Meu perfil
             <a href=@{ListarCriancaR}> Montar Sacolinhas
-            <a href="">Meus Dados
+            <a href=@{PerfilR}>Meus Dados
               <div .menu__login>
                 <form action=@{LogoutR} method=post>
                   <input type="submit" value="Sair">

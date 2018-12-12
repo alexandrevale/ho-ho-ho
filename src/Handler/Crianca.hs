@@ -25,8 +25,8 @@ widgetFooter = do
                 toWidget $(luciusFile "templates/footer.lucius")
 
 
-formCrianca :: Form Crianca
-formCrianca = renderBootstrap $ Crianca
+formCrianca :: ResponsavelId -> Form Crianca
+formCrianca idresponsavel = renderBootstrap $ Crianca
     <$> areq textField "Nome: " Nothing
     <*> areq textField "Idade: " Nothing
     <*> areq textField "Sexo: " Nothing
@@ -34,20 +34,21 @@ formCrianca = renderBootstrap $ Crianca
     <*> areq textField "Tamanho da roupa: " Nothing
     <*> areq textField "Tamanho do calçado: " Nothing
     <*> areq textField  "Preferencia: " Nothing
+    <*> pure idresponsavel 
 
 getCriancaR :: ResponsavelId -> Handler Html
 getCriancaR responsavelId = do 
-    (widgetForm, enctype) <- generateFormPost formCrianca
+    (widgetForm, enctype) <- generateFormPost (formCrianca responsavelId)
     logado <- lookupSession "_USR"
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
         toWidget $(luciusFile "templates/usuario.lucius")
-        toWidget $(luciusFile "templates/listar-crianca.lucius")
+        toWidget $(luciusFile "templates/cadastro-empresa.lucius")
         $(whamletFile "templates/cadastro-crianca.hamlet")
 
 postCriancaR :: ResponsavelId -> Handler Html
 postCriancaR responsavelId = do 
-    ((res,_),_) <- runFormPost formCrianca
+    ((res,_),_) <- runFormPost (formCrianca responsavelId)
     case res of 
         FormSuccess crianca -> do 
             runDB $ insert crianca
