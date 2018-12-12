@@ -1,0 +1,11 @@
+#painel-admin {
+    height: 80vh;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+#painel-admin .btn {
+    margin: 0 auto;
+    display: block;
+    width: 120px;
+}

@@ -30,6 +30,7 @@ getAdminR = do
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
         $(whamletFile "templates/admin.hamlet")
+        toWidget $(luciusFile "templates/admin.lucius")
 
 {--postApagarR :: UsuarioId -> Handler Html
 postApagarR usrid = do 

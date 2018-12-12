@@ -1,29 +1,28 @@
 ^{widgetNav logado}
 <main>            
-    <div .container>
-        <div .row>
-            <div .col-lg-4 .col-md-4 .col-sm-4 .col-xs-12>
-                <div .imgTipoCadastro>
-                    <img src=@{StaticR imgs_icones_msg_png}>
-                <div .card-body>
-                    <h4 .card-title>Mensagens Recebidas
-                <div .botaoTipoCadastro>
-                    <a  href=@{ListarMensagensR}>Acessar
-                  
-            <div .col-lg-4 .col-md-4 .col-sm-4 .col-xs-12>
-                <div .imgTipoCadastro>
-                    <img src=@{StaticR imgs_icones_usr_png}>
-                <div .card-body>
-                    <h4 .card-title>Usuários Cadastrados
-                <div .botaoTipoCadastro>  
-                    <a  href=@{ListarUsuarioR} >Acessar
-                  
-            <div .col-lg-4 .col-md-4 .col-sm-4 .col-xs-12>
-                <div .imgTipoCadastro>
-                    <img src=@{StaticR imgs_icones_scl_png}>
-                <div .card-body>
-                    <h4 .card-title>Sacolinhas Adotadas
-                <div .botaoTipoCadastro>
-                    <a  href=@{HomeR}> Cadastre-se
-    
+    <section #painel-admin>
+        <div .container>
+            <div .row>
+                <h2 .text-center>Painel Administrativo
+                <div .col-lg-4 .col-md-4 .col-sm-4 .col-xs-12>
+                    <img src=@{StaticR imgs_icones_msg_png} .center-block>
+                    <div .card-body>
+                        <h4 .card-title .text-center>Mensagens Recebidas
+                    <div .botaoTipoCadastro>
+                        <a href=@{ListarMensagensR} .btn .btn-primary>Acessar
+                      
+                <div .col-lg-4 .col-md-4 .col-sm-4 .col-xs-12>
+                    <img src=@{StaticR imgs_icones_usr_png} .center-block>
+                    <div .card-body>
+                        <h4 .card-title .text-center>Usuários Cadastrados
+                    <div .botaoTipoCadastro>  
+                        <a href=@{ListarUsuarioR} .btn .btn-primary>Acessar
+                      
+                <div .col-lg-4 .col-md-4 .col-sm-4 .col-xs-12>
+                    <img src=@{StaticR imgs_icones_scl_png} .center-block>
+                    <div .card-body>
+                        <h4 .card-title .text-center>Sacolinhas Adotadas
+                    <div .botaoTipoCadastro>
+                        <a href=@{HomeR} .btn .btn-primary> Cadastre-se
+        
 ^{widgetFooter}
