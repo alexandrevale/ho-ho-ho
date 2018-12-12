@@ -41,4 +41,5 @@ Contato
 Sacolinha
     criancaid CriancaId
     adotador Perfil
+    UniqueSacolinha criancaid
     deriving Show Read

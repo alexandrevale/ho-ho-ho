@@ -50,3 +50,6 @@ postResponsavelR usuarioId = do
                 update usuarioId [UsuarioPerfil =. ResponsavelPerfil (fromSqlKey rid) ]
                 return rid
             redirect $ CriancaR rid
+        _ -> do
+            setMessage [shamlet| <p> Deu ruim |]
+            redirect $ ResponsavelR usuarioId
