@@ -69,3 +69,11 @@ postUsuarioR = do
                 |]
                 redirect UsuarioR
         _ -> redirect UsuarioR
+        
+getListarUsuarioR :: Handler Html
+getListarUsuarioR = do
+    logado <- lookupSession "_USR"
+    usuario <- runDB $ selectList [] [Asc UsuarioNome]
+    defaultLayout $ do 
+        addStylesheet $ StaticR css_bootstrap_css
+        $(whamletFile "templates/listar-usuario.hamlet")

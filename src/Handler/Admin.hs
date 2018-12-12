@@ -36,21 +36,9 @@ postApagarR usrid = do
     runDB $ delete usrid
     redirect AdminR--}
 
-getListarUsuarioR :: Handler Html
-getListarUsuarioR = do
-    logado <- lookupSession "_USR"
-    usuario <- runDB $ selectList [] [Asc UsuarioNome]
-    defaultLayout $ do 
-        addStylesheet $ StaticR css_bootstrap_css
-        $(whamletFile "templates/listar-usuario.hamlet")
-        
-getListarMensagensR :: Handler Html
-getListarMensagensR = do
-    logado <- lookupSession "_USR"
-    mensagens <- runDB $ selectList [] [Asc ContatoNome]
-    defaultLayout $ do 
-        addStylesheet $ StaticR css_bootstrap_css
-        $(whamletFile "templates/listar-mensagens.hamlet")
+
+      
+
         
 
 

@@ -11,13 +11,17 @@
                                 Nome
                             <th>
                                 E-mail
+                            <th>
+                                Mensagem
             
                     <tbody>
-                        $forall (Entity usuarioid usuario) <- usuario
+                        $forall (Entity contatoid contato) <- contato
                             <tr>
                                 <td>
-                                    #{usuarioNome usuario}
+                                    #{contatoNome contato}
                                 <td>
-                                    #{usuarioEmail usuario}
+                                    #{contatoEmail contato}
+                                <td>
+                                    #{contatoMensagem contato}
 
 ^{widgetFooter}  

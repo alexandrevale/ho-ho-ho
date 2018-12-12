@@ -68,3 +68,11 @@ postContatoR = do
             runDB $ do
                 insert contato
             redirect HomeR
+            
+getListarMensagensR :: Handler Html
+getListarMensagensR = do
+    logado <- lookupSession "_USR"
+    contato <- runDB $ selectList [] [Asc ContatoNome]
+    defaultLayout $ do 
+        addStylesheet $ StaticR css_bootstrap_css
+        $(whamletFile "templates/listar-mensagens.hamlet")
