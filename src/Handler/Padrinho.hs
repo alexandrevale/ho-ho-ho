@@ -42,6 +42,7 @@ getPadrinhoR usuarioId = do
     logado <- lookupSession "_USR"
     (widgetForm, enctype) <- generateFormPost formPadrinho
     defaultLayout $ do 
+        setTitle "Cadastro de Padrinho - Ho Ho Ho"
         addStylesheet $ StaticR css_bootstrap_css
         toWidget $(luciusFile "templates/home.lucius")
         toWidget $(luciusFile "templates/cadastro-padrinho.lucius")
@@ -80,6 +81,7 @@ getListarCriancaAdotadaR = do
     sacolinha <- runDB $ selectList [SacolinhaAdotador ==. perfil] []
     crianca <- runDB $ selectList [CriancaId <-. (fmap (sacolinhaCriancaid . entityVal) sacolinha)] []
     defaultLayout $ do 
+        setTitle "Crianças Adotadas - Ho Ho Ho"
         addStylesheet $ StaticR css_bootstrap_css
         toWidget $(luciusFile "templates/tabelas.lucius")
         $(whamletFile "templates/listar-crianca-adotada.hamlet")

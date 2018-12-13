@@ -47,6 +47,7 @@ getUsuarioR = do
     (widgetUsu, enctype) <- generateFormPost formUsuario
     msg <- getMessage --mensagem que avisa se o usuarioc cadastrou certo
     defaultLayout $ do 
+        setTitle "Cadastro de Usuário - Ho Ho Ho"
         addStylesheet $ StaticR css_bootstrap_css
         $(whamletFile "templates/usuario.hamlet")
 
@@ -74,6 +75,7 @@ getListarUsuarioR = do
     logado <- lookupSession "_USR"
     usuario <- runDB $ selectList [] [Asc UsuarioNome]
     defaultLayout $ do 
+        setTitle "Usuários Cadastrados - Ho Ho Ho"
         addStylesheet $ StaticR css_bootstrap_css
         toWidget $(luciusFile "templates/tabelas.lucius")
         $(whamletFile "templates/listar-usuario.hamlet")

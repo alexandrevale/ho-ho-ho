@@ -4,7 +4,7 @@
     <div .container>
         <div .row>
             <div .col-lg-12 .col-md-12 .col-sm-12 .col-xs-12>
-                <h2 .text-center .title>Cadastro de Crianca
+                <h2 .text-center .title>Cadastro de Criança
                 <p .text-center>Falta só mais um pouco! Complete o formulário com as informações da criança, essas informações serão as referências para o padrinho ou madrinha montar a sacolinha. Então capriche nas informações, preencha de forma clara e detalhada.
                 <form action=@{CriancaR responsavelId} method=post enctype=#{enctype} .form--update>
                     ^{widgetForm}

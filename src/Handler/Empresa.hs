@@ -24,9 +24,6 @@ widgetFooter = do
                 $(whamletFile "templates/footer.hamlet") 
                 toWidget $(luciusFile "templates/footer.lucius")
 
-
-
-
 formEmpresa :: Form Empresa
 formEmpresa = renderBootstrap $ Empresa
     <$> areq textField "Telefone: " Nothing
@@ -41,10 +38,10 @@ formEmpresaUpdate telefone endereco cnpj = renderBootstrap $ Empresa
     
 getEmpresaR :: UsuarioId -> Handler Html 
 getEmpresaR usuarioId = do 
-    -- setTitle "Cadastro de Empresa - Ho Ho Ho"
     logado <- lookupSession "_USR"
     (widgetForm, enctype) <- generateFormPost formEmpresa
     defaultLayout $ do 
+        setTitle "Cadastro de Empresa - Ho Ho Ho"
         addStylesheet $ StaticR css_bootstrap_css
         toWidget $(luciusFile "templates/home.lucius")
         toWidget $(luciusFile "templates/cadastro-empresa.lucius")
@@ -64,8 +61,6 @@ getEmpresaUpdateR :: EmpresaId -> Handler Html
 getEmpresaUpdateR empresaId = do
     logado <- lookupSession "_USR"
     (Empresa telefone endereco cnpj) <- runDB $ get404 empresaId
-    -- pega o formulario e retorna widgetForm que permite usar o hamlet junto com o enctype poe no formulario e o res é indica se eh um post ou get
-    -- x é um array de erros
     ((res, widgetForm ), enctype) <- runFormPost $ formEmpresaUpdate telefone endereco cnpj
     case res of
         FormMissing -> defaultLayout $(whamletFile "templates/alterarempresa.hamlet")

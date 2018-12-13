@@ -26,7 +26,6 @@ widgetFooter = do
                 $(whamletFile "templates/footer.hamlet") 
                 toWidget $(luciusFile "templates/footer.lucius")
 
-
 getPerfilR :: Handler Html   
 getPerfilR = do
     logado <- lookupSession "_USR"

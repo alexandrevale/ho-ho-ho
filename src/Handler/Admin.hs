@@ -28,6 +28,7 @@ getAdminR = do
     logado <- lookupSession "_USR"
     usuarios <- runDB $ selectList [] [Asc UsuarioNome]
     defaultLayout $ do 
+        setTitle "Painel Administrativo - Ho Ho Ho"
         addStylesheet $ StaticR css_bootstrap_css
         $(whamletFile "templates/admin.hamlet")
         toWidget $(luciusFile "templates/admin.lucius")

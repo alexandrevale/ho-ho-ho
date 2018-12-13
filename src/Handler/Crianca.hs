@@ -42,6 +42,7 @@ getCriancaR responsavelId = do
     (widgetForm, enctype) <- generateFormPost (formCrianca responsavelId)
     logado <- lookupSession "_USR"
     defaultLayout $ do 
+        setTitle "Cadastro de Criança - Ho Ho Ho"
         addStylesheet $ StaticR css_bootstrap_css
         toWidget $(luciusFile "templates/cadastro-empresa.lucius")
         $(whamletFile "templates/cadastro-crianca.hamlet")
@@ -62,6 +63,7 @@ getListarCriancaR = do
     criancaAdotada <- runDB $ selectList [CriancaId <-. (fmap (sacolinhaCriancaid . entityVal) sacolinha)] []
     crianca <- runDB $ selectList [CriancaId /<-. (fmap entityKey criancaAdotada ) ] [Asc CriancaNome]
     defaultLayout $ do 
+        setTitle "Crianças Adotadas - Ho Ho Ho"
         addStylesheet $ StaticR css_bootstrap_css
         toWidget $(luciusFile "templates/tabelas.lucius")
         $(whamletFile "templates/listar-crianca.hamlet")

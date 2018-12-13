@@ -35,6 +35,7 @@ getResponsavelR usuarioId = do
     logado <- lookupSession "_USR"
     (widgetForm, enctype) <- generateFormPost formResponsavel
     defaultLayout $ do 
+        setTitle "Cadastro de Responsável - Ho Ho Ho"
         addStylesheet $ StaticR css_bootstrap_css
         toWidget $(luciusFile "templates/home.lucius")
         toWidget $(luciusFile "templates/cadastro-empresa.lucius")
