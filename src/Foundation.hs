@@ -33,25 +33,25 @@ instance Yesod App where
     isAuthorized LoginR _ = return Authorized
     isAuthorized FaviconR _ = return Authorized
     isAuthorized RobotsR _ = return Authorized
-    isAuthorized LogoutR _ = return Authorized
-    isAuthorized AdminR _ = return Authorized
+    isAuthorized LogoutR _ = ehUsuario
+    isAuthorized AdminR _ = ehAdmin
     isAuthorized CadastroR _ = return Authorized
-    isAuthorized TelaR _ = return Authorized
-    isAuthorized UsuarioR _ = return Authorized
-    isAuthorized (DeletarUsuarioR _) _ = return Authorized
-    isAuthorized ListarMensagensR _ = return Authorized
-    isAuthorized ListarUsuarioR _ = return Authorized
-    isAuthorized ListarCriancaR _ = return Authorized
+    isAuthorized TelaR _ = ehUsuario
+    isAuthorized UsuarioR _ = ehUsuario
+    isAuthorized (DeletarUsuarioR _) _ = ehAdmin
+    isAuthorized ListarMensagensR _ = ehAdmin
+    isAuthorized ListarUsuarioR _ = ehAdmin
+    isAuthorized ListarCriancaR _ = ehUsuario
     isAuthorized (EmpresaR _) _ = return Authorized
     isAuthorized (ResponsavelR _) _ = return Authorized
     isAuthorized (PadrinhoR _) _ = return Authorized
     isAuthorized (CriancaR _) _ = return Authorized
-    isAuthorized PerfilR _ = return Authorized
-    isAuthorized (EmpresaUpdateR _) _ = return Authorized
-    isAuthorized (PadrinhoUpdateR _) _ = return Authorized
-    isAuthorized (SacolinhaR _) _ = return Authorized
+    isAuthorized PerfilR _ = ehUsuario
+    isAuthorized (EmpresaUpdateR _) _ = ehUsuario
+    isAuthorized (PadrinhoUpdateR _) _ = ehUsuario
+    isAuthorized (SacolinhaR _) _ = ehUsuario
     isAuthorized (StaticR _) _ = return Authorized
-    isAuthorized ListarCriancaAdotadaR _ = return Authorized
+    isAuthorized ListarCriancaAdotadaR _ = ehUsuario
     
     
 instance YesodPersist App where
@@ -66,3 +66,21 @@ instance RenderMessage App FormMessage where
 instance HasHttpManager App where
     getHttpManager = appHttpManager
 
+ehUsuario :: Handler AuthResult
+ehUsuario = do 
+    logado <- lookupSession "_USR"
+    case logado of
+        Just _ -> return Authorized
+        Nothing -> return AuthenticationRequired
+        
+ehAdmin :: Handler AuthResult
+ehAdmin = do 
+    logado <- lookupSession "_USR"
+    case logado of
+        Just usuario -> do 
+            nome <- return $ usuarioNome $ read $ unpack usuario
+            if nome == "admin" then
+                return Authorized
+            else 
+                return $ Unauthorized "Não tem acesso!"
+        Nothing -> return AuthenticationRequired
