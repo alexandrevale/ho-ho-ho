@@ -2,14 +2,11 @@
 
 <main>
     <div .container>
-        <div .tituloPadrinho>
-            <h3>Cadastro de Padrinho
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-        
-        <div .containerForm>
-            <form action=@{PadrinhoR usuarioId} method=post enctype=#{enctype}>
-                ^{widgetForm}
-                <div .enviarCadastro>
-                 <input type="submit" value="Enviar">
-                 
+        <div .row>
+            <div .col-lg-12 .col-md-12 .col-sm-12 .col-xs-12>
+                <h2 .text-center .title>Cadastro de Padrinho
+                <form action=@{PadrinhoR usuarioId} method=post enctype=#{enctype} .form--update>
+                    ^{widgetForm}
+                    <input type="submit" value="Salvar" .btn>
+                     
 ^{widgetFooter}

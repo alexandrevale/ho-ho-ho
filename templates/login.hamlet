@@ -5,7 +5,7 @@
         <div .container-fluid .banner--login>
             <div .row>
                 <div .col-lg-12 .col-md-12 .col-sm-12 .col-xs-12>
-                    <form action=@{LoginR} method=post enctype=#{enctype} .form--login>
+                    <form action=@{LoginR} method=post enctype=#{enctype} .form--base .form--login>
                         ^{widgetForm}
                         <input type="submit" value="Logar" .btn .btn--logar>
                         

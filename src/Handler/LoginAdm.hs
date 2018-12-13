@@ -36,12 +36,7 @@ getLoginadmR = do
     logado <- lookupSession "_USR"
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
---        HEAD
---        $(whamletFile "templates/login.hamlet")
 
---        $(whamletFile "templates/loginadm.hamlet")
- --       eeab28a6847bd4746e4aec53246ce523783f9beb
-    
 postLoginadmR :: Handler Html 
 postLoginadmR = do 
     ((res,_),_) <- runFormPost formLoginadm

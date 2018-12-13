@@ -43,7 +43,6 @@ getCriancaR responsavelId = do
     logado <- lookupSession "_USR"
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
-        toWidget $(luciusFile "templates/usuario.lucius")
         toWidget $(luciusFile "templates/cadastro-empresa.lucius")
         $(whamletFile "templates/cadastro-crianca.hamlet")
 
@@ -64,6 +63,7 @@ getListarCriancaR = do
     crianca <- runDB $ selectList [CriancaId /<-. (fmap entityKey criancaAdotada ) ] [Asc CriancaNome]
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
+        toWidget $(luciusFile "templates/tabelas.lucius")
         $(whamletFile "templates/listar-crianca.hamlet")
         
 postSacolinhaR :: CriancaId -> Handler Html

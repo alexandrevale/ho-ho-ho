@@ -11,14 +11,15 @@
           <span>
 
       $maybe usuario <- logado 
-          #{usuarioNome $ read $ unpack usuario}
+          <div .bem-vindo>
+              Olá <b>#{usuarioNome $ read $ unpack usuario}, tudo bem?
           <div .nav__links>
-            <a href="">Meu perfil
-            <a href=@{ListarCriancaR}> Montar Sacolinhas
-            <a href=@{PerfilR}>Meus Dados
+              <a href=@{ListarCriancaAdotadaR}>Meu perfil
+              <a href=@{ListarCriancaR}> Montar Sacolinhas
+              <a href=@{PerfilR}>Meus Dados
               <div .menu__login>
-                <form action=@{LogoutR} method=post>
-                  <input type="submit" value="Sair">
+                  <form action=@{LogoutR} method=post>
+                      <input type="submit" value="Sair" .btn--logout>
       $nothing
           <div .nav__links>
             <a class="nav-link" href=@{HomeR}>Home
@@ -26,5 +27,5 @@
             <a class="nav-link" href="@{HomeR}#quem-confia">Quem Confia
             <a class="nav-link" href=@{HomeR}#contato>Contatos
             <div .menu__login>
-                <a class="nav-link" href=@{TelaR}>Cadastrar
+                <a class="nav-link" href=@{UsuarioR}>Cadastrar
                 <a class="nav-link" href=@{LoginR}>Acessar

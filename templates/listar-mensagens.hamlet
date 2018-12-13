@@ -1,27 +1,29 @@
 ^{widgetNav logado}
 
 <main>
-    <div .container>
-        <div .row>
-            <div .col-lg-12 .col-md-12 .col-sm-12 .col-xs-12>
-                <table class="table-stripped">
-                    <thead>
-                        <tr>
-                            <th .text-center>
-                                Nome
-                            <th .text-center>
-                                E-mail
-                            <th .text-center>
-                                Mensagem
-            
-                    <tbody>
-                        $forall (Entity contatoid contato) <- contato
+    <section .listar-tabela>
+        <div .container>
+            <div .row>
+                <div .col-lg-12 .col-md-12 .col-sm-12 .col-xs-12>
+                    <h2 .text-center .title>Mensagens enviadas
+                    <table class="table-stripped">
+                        <thead>
                             <tr>
-                                <td>
-                                    #{contatoNome contato}
-                                <td>
-                                    #{contatoEmail contato}
-                                <td>
-                                    #{contatoMensagem contato}
+                                <th .text-center>
+                                    Nome
+                                <th .text-center>
+                                    E-mail
+                                <th .text-center>
+                                    Mensagem
+                
+                        <tbody>
+                            $forall (Entity contatoid contato) <- contato
+                                <tr>
+                                    <td>
+                                        #{contatoNome contato}
+                                    <td>
+                                        #{contatoEmail contato}
+                                    <td>
+                                        #{contatoMensagem contato}
 
 ^{widgetFooter}  

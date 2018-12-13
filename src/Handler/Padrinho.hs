@@ -81,4 +81,5 @@ getListarCriancaAdotadaR = do
     crianca <- runDB $ selectList [CriancaId <-. (fmap (sacolinhaCriancaid . entityVal) sacolinha)] []
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
+        toWidget $(luciusFile "templates/tabelas.lucius")
         $(whamletFile "templates/listar-crianca-adotada.hamlet")

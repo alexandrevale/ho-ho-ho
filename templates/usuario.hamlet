@@ -1,14 +1,31 @@
 ^{widgetNav logado}
 
 <main>
-    <div .container-fluid .banner--cadastrar>
-        <div .row .wrapper>
-            <div .col-lg-6 .col-md-6 .col-sm-6 .col-xs-12>    
-                <h2>Cadastro Inicial
-             
-            <div .col-lg-6 .col-md-6 .col-sm-6 .col-xs-12>  
-                <form action=@{UsuarioR} method=post enctype=#{enctype}>
-                    ^{widgetUsu}
-                    <input type="submit" value="Cadastrar" .btn .btn--cadastrar>
+    <section>
+        <div .container-fluid .banner--cadastrar>
+            <h2 .text-center .title>Cadastro Inicial
+            <div .row .wrapper>
+                <div .col-lg-6 .col-md-6 .col-sm-6 .col-xs-12>    
+                    <h3 .text-center .subtitle>Tipos de Perfis
+                    <div .perfil>
+                        <img src=@{StaticR imgs_icones_madrinha_png} .perfil__img>
+                        <h3>Padrinho ou Madrinha
+                        <p>Compartilhe alegria nesse natal! Seu cadastro de padrinho permite adotar uma criança, depois de adotada nossa equipe entrará em contato para confimar a adoção.<br>Como padrinho você doa: 1 brinquedo, 1 conjunto de roupa (ex. Blusa e saia, camiseta e bermuda, etc) e um calçado.
+                 
+                    <div .perfil>
+                        <img src=@{StaticR imgs_icones_responsavel_png} .perfil__img>
+                        <h3>Responsável
+                        <p>Receba presentes com amor e carinho! Enquanto responsável você faz um breve cadastro com seus dados e depois o cadastro do seu filho.<br>As empresas e os padrinhos cadastrados poderão ter a chance de presentear seu filho com uma sacolinha de natal cheia de amor e carinho.
+                
+                    <div .perfil>
+                        <img src=@{StaticR imgs_icones_empresa_png} .perfil__img>
+                        <h3>Empresa
+                        <p>Faça a diferença nesse natal! Como empresa você pode adotar quantas crianças quiser.<br>A nossa sugestão é que os funcionários da sua empresa compartilhem dessa ideia, dessa forma mais crianças poderão receber suas sacolinhas de natal.
+               
+                <div .col-lg-6 .col-md-6 .col-sm-6 .col-xs-12>  
+                    <h3 .text-center .subtitle>Formulário de cadastro
+                    <form action=@{UsuarioR} method=post enctype=#{enctype} .form--base>
+                        ^{widgetUsu}
+                        <input type="submit" value="Cadastrar" .btn .btn--cadastrar>
 
 ^{widgetFooter}

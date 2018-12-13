@@ -87,7 +87,7 @@
                         
                 <div .col-lg-6 .col-md-6 .col-sm-6 .col-xs-12>
                     <h2 .text-center .text--blue>Entre em Contato
-                    <form action=@{ContatoR} method=post enctype=#{enctype}>
+                    <form action=@{ContatoR} method=post enctype=#{enctype} .form--base>
                       ^{widgetCtt}
                         <input type="submit" value="Enviar" .btn .btn--contato>
                       

@@ -7,3 +7,6 @@
     align-items: center;
 }
 
+.form--login {
+    width: 320px;
+}

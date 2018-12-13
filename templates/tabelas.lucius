@@ -1,3 +1,24 @@
-td {
+.listar-tabela {
+    min-height: 80vh;
+    padding-top: 25px;
+}
+
+table {
+    margin: auto;
+    font-size: 16px;
+}
+
+thead {
+    background: #e74c3c;
+    color: #ecf0f1;
+    font-size: 20px;
+}
+
+tr:nth-child(even) {
+    background: #ddd;
+}
+
+th, td {
     padding: 15px;
 }
+

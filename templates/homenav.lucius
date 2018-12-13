@@ -1,3 +1,9 @@
+
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+}
+
 nav {
   width: 100%;
   height: 80px;
@@ -76,11 +82,12 @@ nav {
   display: inline;
   font-size: 20px;
   height: 80px;
+  float: right;
 }
 
 .nav__links a,
 .nav__links a:hover {
-  padding: 25px 7.5px;
+  padding: 25px;
 }
 
 .nav__links a::after {
@@ -105,29 +112,45 @@ main {
   padding-top: 80px;
 }
 
-form {
-  width: 300px;
+.title {
+  color: #c8d6e5;
+} 
+
+.subtitle {
+  color: #488bd2
+}
+
+.form--base {
+  background: rgba(0,0,0,.5);
+  width: 100%;
   padding: 15px;
 }
 
-.form--login {
-  background: rgba(0, 0, 0, .5);
+.form--update {
+  background: rgba(0,0,0,.5);
+  margin: 55px auto;
+  width: 360px;
+  padding: 15px;
 }
 
 label {
   margin-top: 15px;
+  color: #fff
 }
 
 input,
-textarea {
+textarea,
+select {
   width: 100%;
   border: none;
   border-radius: 15px;
   background: #ddd;
   color: #000;
+  padding-left: 15px;
 }
 
-input {
+input,
+select {
   height: 50px;
 }
 
@@ -136,11 +159,46 @@ textarea {
   resize: none;
 }
 
+.btn {
+  margin-top: 15px;
+  margin-left: auto;
+  display: block;
+  width: 150px;
+  background-color: #27ae60;
+  color: #fff;
+  font-weight: 700;
+}
+
+.btn--logout,
+.btn--deletar {
+  background: transparent;
+  padding: 25px 0;
+  border-radius: 0;
+}
+
+.bem-vindo {
+  float: left;
+  padding: 25px 0;
+  color: #fff;
+  font-size: 20px;
+}
+
 .ancora {
    display: block;
    position: relative;
    top: -80px;
    visibility: hidden;
+}
+
+.perfil {
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+.perfil__img {
+  width: 200px;
+  float: left;
+  margin-right: 15px;
 }
 
 
@@ -218,4 +276,10 @@ textarea {
     overflow: hidden;
   }
   
+}
+
+@media only screen and (min-width : 1200px)  {
+  .wrapper {
+    width: 1170px;
+  }
 }

@@ -1,28 +1,29 @@
 ^{widgetNav logado}
 
 <main>
-    <div .container>
-        <div .row>
-            <div .col-lg-12 .col-md-12 .col-sm-12 .col-xs-12>
-                <table class="table-stripped">
-                    <thead>
-                        <tr>
-                            <th>
-                                Nome
-                            <th>
-                                E-mail
-                            <th>
-                                Deletar
-            
-                    <tbody>
-                        $forall (Entity usuarioid usuario) <- usuario
+    <section .listar-tabela>
+        <div .container>
+            <div .row>
+                <div .col-lg-12 .col-md-12 .col-sm-12 .col-xs-12>
+                    <table class="table-stripped">
+                        <thead>
                             <tr>
-                                <td>
-                                    #{usuarioNome usuario}
-                                <td>
-                                    #{usuarioEmail usuario}
-                                <td>
-                                    <form action=@{DeletarUsuarioR usuarioid} method=post>
-                                        <input type="submit" value="X">
+                                <th .text-center>
+                                    Nome
+                                <th .text-center>
+                                    E-mail
+                                <th .text-center>
+                                    Deletar
+                
+                        <tbody>
+                            $forall (Entity usuarioid usuario) <- usuario
+                                <tr>
+                                    <td>
+                                        #{usuarioNome usuario}
+                                    <td>
+                                        #{usuarioEmail usuario}
+                                    <td>
+                                        <form action=@{DeletarUsuarioR usuarioid} method=post>
+                                            <input type="submit" value="X">
 
 ^{widgetFooter}  

@@ -1,41 +1,51 @@
 ^{widgetNav logado}
 
 <main>
-
-    <table class="table-stripped">
-        <thead>
-            <tr>
-                <th>
-                    NOME
-                <th>
-                    IDADE
-                <th>
-                    SEXO
-                <th>
-                    RG
-                <th>
-                    TAMANHO DA ROUPA
-                <th>
-                    TAMANHO DO CALÇADO
-                <th>
-                    PREFERÊNCIA 
-    
-        <tbody class="formulario">
-            $forall (Entity criancaId crianca) <- crianca
-                <tr>
-                    <td>
-                        #{criancaNome crianca}
-                    <td>
-                        #{criancaIdade crianca}
-                    <td>
-                        #{criancaSexo crianca}
-                    <td>
-                        #{criancaRg crianca}
-                    <td>
-                        #{criancaTamanhoroupa crianca}
-                    <td>
-                        #{criancaTamanhocalcado crianca}
-                    <td>
-                        #{criancaPreferencia crianca}
+    <section .listar-tabela>
+        <div .container>
+            <div .row>
+                <div .col-lg-12 .col-md-12 .col-sm-12 .col-xs-12>
+                    <h2 .text-center .title>Crianças Adotadas
+                    <table class="table-stripped">
+                        <thead>
+                            <tr>
+                                <th .text-center>
+                                    Nome 
+                                    
+                                <th .text-center>
+                                    Idade
+                                    
+                                <th .text-center>
+                                    Sexo
+                                    
+                                <th .text-center>
+                                    Registro Geral (RG)
+                                    
+                                <th .text-center>
+                                    Tamanho da roupa
+                                    
+                                <th .text-center>
+                                    Tamanho do calçado
+                                    
+                                <th .text-center>
+                                    Preferência 
+                    
+                        <tbody class="formulario">
+                            $forall (Entity criancaId crianca) <- crianca
+                                <tr>
+                                    <td>
+                                        #{criancaNome crianca}
+                                    <td>
+                                        #{criancaIdade crianca}
+                                    <td>
+                                        #{criancaSexo crianca}
+                                    <td>
+                                        #{criancaRg crianca}
+                                    <td>
+                                        #{criancaTamanhoroupa crianca}
+                                    <td>
+                                        #{criancaTamanhocalcado crianca}
+                                    <td>
+                                        #{criancaPreferencia crianca}
                     
 ^{widgetFooter}

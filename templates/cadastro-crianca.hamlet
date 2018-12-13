@@ -2,14 +2,12 @@
 
 <main>
     <div .container>
-        <div .tituloPadrinho>
-            <h3>Cadastro de Crianca
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-        
-        <div .containerForm>
-            <form action=@{CriancaR responsavelId} method=post enctype=#{enctype}>
-                ^{widgetForm}
-                <div .enviarCadastro>
-                 <input type="submit" value="Enviar">
+        <div .row>
+            <div .col-lg-12 .col-md-12 .col-sm-12 .col-xs-12>
+                <h2 .text-center .title>Cadastro de Crianca
+                <p .text-center>Falta só mais um pouco! Complete o formulário com as informações da criança, essas informações serão as referências para o padrinho ou madrinha montar a sacolinha. Então capriche nas informações, preencha de forma clara e detalhada.
+                <form action=@{CriancaR responsavelId} method=post enctype=#{enctype} .form--update>
+                    ^{widgetForm}
+                        <input type="submit" value="Terminar o cadastro" .btn>
                  
 ^{widgetFooter}
