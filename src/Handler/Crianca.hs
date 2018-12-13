@@ -74,5 +74,5 @@ postSacolinhaR  criancaId = do
     case fmap (read . unpack) logado of
         Just (Usuario _ _ _ x) -> do
             _ <- runDB $ insert $ Sacolinha criancaId x
-            redirect HomeR
+            redirect ListarCriancaAdotadaR
 

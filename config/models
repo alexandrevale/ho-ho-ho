@@ -1,26 +1,9 @@
-Usuario
+Contato
     nome Text
     email Text
-    senha Text
-    perfil Perfil
-    deriving Show Read
-    
-Padrinho
-    telefone Text
-    cpf Text
+    mensagem Textarea
     deriving Show Read
 
-Empresa
-    endereco Text
-    cnpj Text
-    telefone Text
-    deriving Show Read
-
-Responsavel
-    telefone Text
-    cpf Text
-    deriving Show Read
-    
 Crianca
     nome Text
     idade Text
@@ -31,15 +14,32 @@ Crianca
     preferencia Text
     responsavelid ResponsavelId
     deriving Show Read
-    
-Contato
-    nome Text
-    email Text
-    mensagem Textarea
+
+Empresa
+    endereco Text
+    cnpj Text
+    telefone Text
     deriving Show Read
-    
+
+Padrinho
+    telefone Text
+    cpf Text
+    deriving Show Read
+
+Responsavel
+    telefone Text
+    cpf Text
+    deriving Show Read
+
 Sacolinha
     criancaid CriancaId
     adotador Perfil
     UniqueSacolinha criancaid
+    deriving Show Read
+    
+Usuario
+    nome Text
+    email Text
+    senha Text
+    perfil Perfil
     deriving Show Read

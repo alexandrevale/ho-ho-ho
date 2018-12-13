@@ -5,7 +5,7 @@
         <div .container>
             <div .row>
                 <div .col-lg-12 .col-md-12 .col-sm-12 .col-xs-12>
-                    <h2 .text-center .title>Crianças Adotadas
+                    <h2 .text-center .title>Adote uma criança
                     <table class="table-stripped">
                         <thead>
                             <tr>
@@ -16,13 +16,15 @@
                                 <th .text-center>
                                     Sexo
                                 <th .text-center>
-                                    Registro Geral (RG)
+                                    RG
                                 <th .text-center> 
                                     Tamanho da roupa
                                 <th .text-center>
                                     Tamanho do calçado
                                 <th .text-center>
-                                    Preferência 
+                                    Preferência
+                                <th .text-center>
+                                    Adotar 
                     
                         <tbody class="formulario">
                             $forall (Entity criancaId crianca) <- crianca
@@ -43,5 +45,5 @@
                                         #{criancaPreferencia crianca}
                                     <td>
                                         <form action=@{SacolinhaR criancaId} method="POST">
-                                            <button .btn> Adotar
+                                            <button .btn> Amei
 ^{widgetFooter}  

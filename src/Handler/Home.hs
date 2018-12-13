@@ -47,7 +47,8 @@ getCadastroR = do
         toWidget $(luciusFile "templates/home.lucius")
         
 getTelaR :: Handler Html 
-getTelaR  = do 
+getTelaR  = do
+    logado <- lookupSession "_USR"
     defaultLayout $ do 
         addStylesheet $ StaticR css_bootstrap_css
         toWidget $(luciusFile "templates/tipocadastro.lucius")

@@ -38,7 +38,6 @@ getLoginR = do
     -- setTitle "Login - Ho Ho Ho"
     logado <- lookupSession "_USR"
     (widgetForm, enctype) <- generateFormPost formLogin
-    msg <- getMessage
     defaultLayout $ do 
         setTitle "Login - Ho Ho Ho"
         addStylesheet $ StaticR css_bootstrap_css
@@ -61,7 +60,7 @@ postLoginR = do
                     setSession "_USR" (pack $ show usuario)
                     setMessage [shamlet|
                     |]
-                    redirect PerfilR
+                    redirect ListarCriancaAdotadaR
                 Nothing -> do 
                     setMessage [shamlet|
                         <h1>
