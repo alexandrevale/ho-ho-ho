@@ -68,7 +68,7 @@ getEmpresaUpdateR empresaId = do
         FormSuccess empresa -> do 
             runDB $ do
                 replace empresaId empresa
-            redirect HomeR
+            redirect ListarCriancaAdotadaR
             
 postEmpresaUpdateR :: EmpresaId -> Handler Html
 postEmpresaUpdateR empresaId = getEmpresaUpdateR empresaId

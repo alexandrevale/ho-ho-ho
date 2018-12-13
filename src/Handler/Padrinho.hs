@@ -69,7 +69,7 @@ getPadrinhoUpdateR padrinhoId = do
         FormSuccess padrinho -> do 
             runDB $ do
                 replace padrinhoId padrinho
-            redirect HomeR
+            redirect ListarCriancaAdotadaR
             
 postPadrinhoUpdateR :: PadrinhoId -> Handler Html
 postPadrinhoUpdateR padrinhoId = getPadrinhoUpdateR padrinhoId

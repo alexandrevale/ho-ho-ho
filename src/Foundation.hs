@@ -36,8 +36,8 @@ instance Yesod App where
     isAuthorized LogoutR _ = ehUsuario
     isAuthorized AdminR _ = ehAdmin
     isAuthorized CadastroR _ = return Authorized
-    isAuthorized TelaR _ = ehUsuario
-    isAuthorized UsuarioR _ = ehUsuario
+    isAuthorized TelaR _ = return Authorized
+    isAuthorized UsuarioR _ = return Authorized
     isAuthorized (DeletarUsuarioR _) _ = ehAdmin
     isAuthorized ListarMensagensR _ = ehAdmin
     isAuthorized ListarUsuarioR _ = ehAdmin
